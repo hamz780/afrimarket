@@ -1,0 +1,154 @@
+.seller-dashboard{
+    display:flex;
+    min-height:100vh;
+    background:#f3f4f6;
+}
+
+.seller-main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.seller-content{
+    padding:30px;
+}
+
+.products-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.products-header h1{
+    font-size:2rem;
+    color:#111827;
+}
+
+.add-product-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#16a34a;
+    color:#fff;
+    border:none;
+    padding:14px 22px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:700;
+    transition:.3s;
+}
+
+.add-product-btn:hover{
+    background:#15803d;
+}
+
+.products-toolbar{
+    margin-bottom:25px;
+}
+
+.search-box{
+    display:flex;
+    align-items:center;
+    background:#fff;
+    border-radius:12px;
+    padding:0 15px;
+    max-width:420px;
+    box-shadow:0 4px 15px rgba(0,0,0,.06);
+}
+
+.search-box svg{
+    color:#6b7280;
+}
+
+.search-box input{
+    width:100%;
+    border:none;
+    outline:none;
+    padding:15px;
+    font-size:1rem;
+    background:transparent;
+}
+
+.products-table{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+}
+
+.products-table table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.products-table th{
+    background:#f9fafb;
+    padding:18px;
+    text-align:left;
+    color:#374151;
+    font-weight:700;
+}
+
+.products-table td{
+    padding:18px;
+    border-top:1px solid #e5e7eb;
+}
+
+.status{
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:.85rem;
+    font-weight:700;
+}
+
+.status.active{
+    background:#dcfce7;
+    color:#15803d;
+}
+
+.status.out{
+    background:#fee2e2;
+    color:#dc2626;
+}
+
+.icon-btn{
+    border:none;
+    background:#eef2ff;
+    color:#2563eb;
+    width:40px;
+    height:40px;
+    border-radius:10px;
+    cursor:pointer;
+    margin-right:10px;
+    transition:.3s;
+}
+
+.icon-btn:hover{
+    transform:translateY(-2px);
+}
+
+.icon-btn.delete{
+    background:#fee2e2;
+    color:#dc2626;
+}
+
+@media(max-width:900px){
+
+    .products-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .products-table{
+        overflow-x:auto;
+    }
+
+    .products-table table{
+        min-width:700px;
+    }
+
+}

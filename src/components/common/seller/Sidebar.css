@@ -1,0 +1,155 @@
+.seller-sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+
+.seller-logo {
+  height: 80px;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.seller-logo > svg {
+  font-size: 30px;
+  color: #ff7a00;
+}
+
+.seller-logo h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+.seller-logo span {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  color: #777777;
+}
+
+/* Menu */
+
+.seller-menu {
+  flex: 1;
+  padding: 20px 14px;
+  overflow-y: auto;
+}
+
+.seller-link {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  padding: 13px 15px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #555555;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.seller-link svg {
+  width: 18px;
+  font-size: 17px;
+}
+
+.seller-link:hover {
+  background: #fff4e8;
+  color: #ff7a00;
+  transform: translateX(2px);
+}
+
+.seller-link.active {
+  background: #ff7a00;
+  color: #ffffff;
+  box-shadow: 0 5px 14px rgba(255, 122, 0, 0.2);
+}
+
+.seller-link.active:hover {
+  background: #f26d00;
+  color: #ffffff;
+}
+
+/* Footer */
+
+.seller-sidebar-footer {
+  padding: 16px 14px;
+  border-top: 1px solid #eeeeee;
+}
+
+.logout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px 15px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #d64545;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #fff0f0;
+}
+
+/* Scrollbar */
+
+.seller-menu::-webkit-scrollbar {
+  width: 5px;
+}
+
+.seller-menu::-webkit-scrollbar-thumb {
+  background: #dddddd;
+  border-radius: 10px;
+}
+
+/* Mobile */
+
+@media (max-width: 900px) {
+  .seller-sidebar {
+    width: 220px;
+  }
+
+  .seller-logo {
+    padding: 0 16px;
+  }
+
+  .seller-link {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .seller-sidebar {
+    width: 240px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .seller-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+}

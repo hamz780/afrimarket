@@ -1,0 +1,1151 @@
+/* =========================================================
+   AFRIMARKET - WHY CHOOSE US
+========================================================= */
+
+.benefits {
+  position: relative;
+  width: 100%;
+  padding: 85px 6% 65px;
+
+  background: linear-gradient(
+    135deg,
+    #f4faf6 0%,
+    #ffffff 50%,
+    #fffaf0 100%
+  );
+
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   BACKGROUND DECORATION
+========================================================= */
+
+.benefits-decoration {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.benefits-decoration-one {
+  width: 300px;
+  height: 300px;
+  background: #dff3e5;
+  top: -150px;
+  left: -100px;
+}
+
+.benefits-decoration-two {
+  width: 260px;
+  height: 260px;
+  background: #fff1c9;
+  bottom: -130px;
+  right: -80px;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.benefits-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.benefits-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.benefits-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 9px 20px;
+
+  border-radius: 30px;
+
+  background: #e4f4e8;
+  color: #198754;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  margin-bottom: 17px;
+}
+
+.benefits-label span {
+  font-size: 17px;
+}
+
+.benefits-header h2 {
+  margin: 0;
+
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.15;
+
+  font-weight: 800;
+
+  color: #111827;
+
+  letter-spacing: -1px;
+}
+
+.benefits-header h2 span {
+  color: #198754;
+}
+
+.benefits-header p {
+  max-width: 700px;
+
+  margin: 17px auto 0;
+
+  color: #64748b;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   BENEFITS GRID
+========================================================= */
+
+.benefits-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 24px;
+
+  width: 100%;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.benefit-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-height: 285px;
+
+  padding: 34px 25px 28px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border: 1px solid #e7ece9;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 8px 25px rgba(31, 41, 55, 0.06);
+
+  text-align: center;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 45px rgba(31, 41, 55, 0.13);
+}
+
+/* Green cards */
+
+.benefit-card.green:hover {
+  border-color: rgba(25, 135, 84, 0.35);
+}
+
+/* Gold cards */
+
+.benefit-card.gold:hover {
+  border-color: rgba(229, 173, 25, 0.45);
+}
+
+/* =========================================================
+   CARD TOP ACCENT
+========================================================= */
+
+.benefit-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 25%;
+
+  width: 50%;
+  height: 4px;
+
+  border-radius: 0 0 10px 10px;
+
+  background: #198754;
+
+  transform: scaleX(0);
+
+  transition: transform 0.35s ease;
+}
+
+.benefit-card:hover::before {
+  transform: scaleX(1);
+}
+
+.benefit-card.gold::before {
+  background: #e5ad19;
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.benefit-icon {
+  width: 78px;
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 22px;
+
+  border-radius: 50%;
+
+  background: #e7f5ea;
+
+  color: #198754;
+
+  font-size: 34px;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Green card hover */
+
+.benefit-card.green:hover .benefit-icon {
+  background: #dff3e5;
+
+  color: #198754;
+
+  transform: scale(1.1) rotate(-4deg);
+
+  box-shadow:
+    0 10px 25px rgba(25, 135, 84, 0.16);
+}
+
+/* Gold cards */
+
+.benefit-card.gold .benefit-icon {
+  background: #fff3d2;
+  color: #d99b00;
+}
+
+/* Gold card hover */
+
+.benefit-card.gold:hover .benefit-icon {
+  background: #ffedbd;
+
+  color: #c48b00;
+
+  transform: scale(1.1) rotate(-4deg);
+
+  box-shadow:
+    0 10px 25px rgba(229, 173, 25, 0.18);
+}
+
+/* =========================================================
+   DELIVERY TRUCK ANIMATION
+========================================================= */
+
+.benefit-card.green:hover .benefit-icon svg {
+  animation: truckBounce 1.2s ease-in-out infinite;
+}
+
+@keyframes truckBounce {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(2px);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  75% {
+    transform: translateX(-2px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* =========================================================
+   SECURE PAYMENT SHIELD ANIMATION
+========================================================= */
+
+.benefit-card.gold:hover .benefit-icon svg {
+  animation: shieldPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes shieldPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.benefit-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+}
+
+.benefit-content h3 {
+  margin: 0 0 12px;
+
+  color: #111827;
+
+  font-size: 20px;
+  line-height: 1.3;
+
+  font-weight: 750;
+}
+
+.benefit-content p {
+  margin: 0;
+
+  max-width: 260px;
+
+  color: #64748b;
+
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.benefit-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  margin-top: auto;
+  padding-top: 18px;
+
+  color: #198754;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.benefit-card.gold .benefit-badge {
+  color: #c48b00;
+}
+
+.benefit-badge span {
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e3f3e7;
+
+  font-size: 11px;
+}
+
+.benefit-badge span svg {
+  font-size: 11px;
+}
+
+.benefit-card.gold .benefit-badge span {
+  background: #fff0c5;
+}
+
+/* =========================================================
+   INTERACTIVE CARD ACTION
+========================================================= */
+
+.benefit-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 13px;
+
+  padding: 7px 14px;
+
+  border-radius: 20px;
+
+  background: #eaf6ee;
+
+  color: #198754;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  opacity: 0;
+
+  transform: translateY(7px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.benefit-card:hover .benefit-action {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* Gold action */
+
+.benefit-card.gold .benefit-action {
+  background: #fff3d2;
+  color: #b77e00;
+}
+
+.benefit-card.gold:hover .benefit-action {
+  background: #e5ad19;
+  color: #ffffff;
+}
+
+/* Action arrow */
+
+.benefit-action span {
+  font-size: 15px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.benefit-card:hover .benefit-action span {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   CUSTOMER SUPPORT CTA
+========================================================= */
+
+.benefit-support-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 13px;
+
+  padding: 7px 14px;
+
+  border-radius: 20px;
+
+  background: #fff3d2;
+
+  color: #b77e00;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  opacity: 0;
+
+  transform: translateY(5px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.benefit-card.gold:hover .benefit-support-link {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  background: #e5ad19;
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   KEYBOARD ACCESSIBILITY
+========================================================= */
+
+.benefit-card-clickable:focus {
+  outline: none;
+}
+
+.benefit-card.green:focus-visible {
+  outline: 3px solid rgba(25, 135, 84, 0.35);
+  outline-offset: 3px;
+}
+
+.benefit-card.gold:focus-visible {
+  outline: 3px solid rgba(229, 173, 25, 0.35);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   BOTTOM TRUST MESSAGE
+========================================================= */
+
+.benefits-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-top: 42px;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+.benefits-trust strong {
+  color: #198754;
+}
+
+.trust-dot {
+  color: #d6a21c;
+  font-size: 18px;
+}
+
+/* =========================================================
+   BENEFIT MODAL OVERLAY
+========================================================= */
+
+.benefit-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.58);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  animation: modalOverlayIn 0.25s ease;
+}
+
+@keyframes modalOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.benefit-modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 540px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 42px 40px 36px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(229, 173, 25, 0.18);
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 30px 80px rgba(15, 23, 42, 0.25);
+
+  text-align: center;
+
+  animation: modalIn 0.35s cubic-bezier(
+    0.2,
+    0.8,
+    0.2,
+    1
+  );
+
+  box-sizing: border-box;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   MODAL CLOSE BUTTON
+========================================================= */
+
+.benefit-modal-close {
+  position: absolute;
+
+  top: 17px;
+  right: 17px;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #f3f4f6;
+
+  color: #64748b;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.benefit-modal-close:hover {
+  background: #fff0c5;
+
+  color: #b77e00;
+
+  transform: rotate(90deg);
+}
+
+/* =========================================================
+   MODAL ICON
+========================================================= */
+
+.benefit-modal-icon {
+  width: 82px;
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 20px;
+
+  border-radius: 50%;
+
+  font-size: 35px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Green modal */
+
+.benefit-modal-icon.green {
+  background: #e7f5ea;
+
+  color: #198754;
+
+  box-shadow:
+    0 12px 30px rgba(25, 135, 84, 0.15);
+}
+
+/* Gold modal */
+
+.benefit-modal-icon.gold {
+  background: #fff3d2;
+
+  color: #d99b00;
+
+  box-shadow:
+    0 12px 30px rgba(229, 173, 25, 0.15);
+}
+
+.benefit-modal-icon:hover {
+  transform: scale(1.06);
+}
+
+/* =========================================================
+   MODAL TITLE
+========================================================= */
+
+.benefit-modal h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 28px;
+
+  font-weight: 800;
+}
+
+.benefit-modal-intro {
+  max-width: 430px;
+
+  margin: 12px auto 28px;
+
+  color: #64748b;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   SECURITY / INFORMATION FEATURES
+========================================================= */
+
+.security-features {
+  display: flex;
+  flex-direction: column;
+
+  gap: 13px;
+
+  text-align: left;
+}
+
+.security-feature {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 14px;
+
+  padding: 16px;
+
+  border: 1px solid #edf1ee;
+
+  border-radius: 16px;
+
+  background: #fafcfb;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.security-feature:hover {
+  transform: translateY(-2px);
+
+  border-color: #dcebe1;
+
+  box-shadow:
+    0 8px 22px rgba(31, 41, 55, 0.06);
+}
+
+.security-feature-icon {
+  flex: 0 0 42px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #e7f5ea;
+
+  color: #198754;
+
+  font-size: 17px;
+}
+
+.security-feature h4 {
+  margin: 0 0 5px;
+
+  color: #111827;
+
+  font-size: 15px;
+
+  font-weight: 800;
+}
+
+.security-feature p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   PROTECTED MESSAGE
+========================================================= */
+
+.security-protected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 18px;
+
+  padding: 14px 16px;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #e8f7ec,
+    #f5fbf6
+  );
+
+  color: #198754;
+
+  font-size: 14px;
+}
+
+.security-protected svg {
+  font-size: 18px;
+}
+
+/* Delivery protection message */
+
+.delivery-protected {
+  background: linear-gradient(
+    135deg,
+    #e8f7ec,
+    #f5fbf6
+  );
+}
+
+/* =========================================================
+   OTHER BENEFIT MODAL MESSAGE
+========================================================= */
+
+.benefit-modal-message {
+  padding: 10px 0;
+}
+
+.benefit-modal-message p {
+  color: #64748b;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   MODAL BUTTON
+========================================================= */
+
+.benefit-modal-button {
+  width: 100%;
+
+  margin-top: 24px;
+
+  padding: 14px 20px;
+
+  border: none;
+
+  border-radius: 13px;
+
+  background: #198754;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(25, 135, 84, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.benefit-modal-button:hover {
+  background: #157347;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(25, 135, 84, 0.25);
+}
+
+.benefit-modal-button:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .benefits {
+    padding: 75px 5% 55px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefit-card {
+    min-height: 270px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .benefits {
+    padding: 60px 20px 45px;
+  }
+
+  .benefits-header {
+    margin-bottom: 35px;
+  }
+
+  .benefits-header h2 {
+    font-size: 30px;
+  }
+
+  .benefits-header p {
+    font-size: 15px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .benefit-card {
+    min-height: auto;
+
+    padding: 30px 22px;
+  }
+
+  .benefit-icon {
+    width: 70px;
+    height: 70px;
+
+    font-size: 30px;
+  }
+
+  .benefit-content h3 {
+    font-size: 19px;
+  }
+
+  /* Always show actions on mobile */
+
+  .benefit-action,
+  .benefit-support-link {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+  .benefits-trust {
+    text-align: center;
+
+    margin-top: 32px;
+  }
+
+  /* =====================================================
+     MOBILE MODAL
+  ====================================================== */
+
+  .benefit-modal-overlay {
+    padding: 15px;
+  }
+
+  .benefit-modal {
+    padding: 38px 22px 25px;
+
+    border-radius: 23px;
+
+    max-height: 92vh;
+  }
+
+  .benefit-modal-icon {
+    width: 70px;
+    height: 70px;
+
+    font-size: 30px;
+  }
+
+  .benefit-modal h2 {
+    font-size: 24px;
+  }
+
+  .benefit-modal-intro {
+    font-size: 14px;
+
+    margin-bottom: 22px;
+  }
+
+  .security-feature {
+    padding: 13px;
+  }
+
+  .security-feature-icon {
+    flex-basis: 38px;
+
+    width: 38px;
+    height: 38px;
+
+    font-size: 15px;
+  }
+
+  .security-feature h4 {
+    font-size: 14px;
+  }
+
+  .security-feature p {
+    font-size: 12px;
+  }
+
+  .security-protected {
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .benefits {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .benefit-card {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .benefits-header h2 {
+    font-size: 27px;
+  }
+
+  .benefit-modal {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .benefit-card,
+  .benefit-icon,
+  .benefit-action,
+  .benefit-support-link,
+  .benefit-modal,
+  .benefit-modal-overlay,
+  .benefit-modal-close,
+  .security-feature,
+  .benefit-modal-button {
+    animation: none !important;
+
+    transition: none !important;
+  }
+}

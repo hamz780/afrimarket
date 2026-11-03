@@ -1,0 +1,20 @@
+.message-search{
+padding:16px;
+border-bottom:1px solid #e5e7eb;
+background:#fff;
+}
+
+.message-search input{
+width:100%;
+padding:12px 14px;
+border:1px solid #d1d5db;
+border-radius:10px;
+outline:none;
+font-size:14px;
+transition:.3s;
+}
+
+.message-search input:focus{
+border-color:#3b82f6;
+box-shadow:0 0 0 3px rgba(59,130,246,.15);
+}

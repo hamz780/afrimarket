@@ -1,0 +1,83 @@
+.message-row{
+display:flex;
+margin:10px 0;
+}
+
+.message-row.customer{
+justify-content:flex-start;
+}
+
+.message-row.seller{
+justify-content:flex-end;
+}
+
+.message-bubble{
+max-width:70%;
+padding:12px 16px;
+border-radius:18px;
+box-shadow:0 3px 10px rgba(0,0,0,.08);
+word-break:break-word;
+animation:fadeIn .25s ease;
+}
+
+.seller-bubble{
+background:#2563eb;
+color:#fff;
+border-bottom-right-radius:6px;
+}
+
+.customer-bubble{
+background:#ffffff;
+border:1px solid #e5e7eb;
+border-bottom-left-radius:6px;
+}
+
+.message-bubble p{
+margin:0;
+line-height:1.6;
+font-size:15px;
+}
+
+.message-footer{
+display:flex;
+justify-content:flex-end;
+align-items:center;
+gap:6px;
+margin-top:8px;
+font-size:12px;
+opacity:.8;
+}
+
+.message-status{
+display:flex;
+align-items:center;
+font-size:13px;
+}
+
+.message-status .read{
+color:#22c55e;
+}
+
+.message-image{
+width:220px;
+max-width:100%;
+border-radius:12px;
+margin-bottom:10px;
+display:block;
+}
+
+audio{
+width:220px;
+margin-bottom:10px;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(8px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}

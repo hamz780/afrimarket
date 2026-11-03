@@ -1,0 +1,217 @@
+/* ==========================================
+   ORDER SUMMARY
+========================================== */
+
+.order-summary{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.order-summary h2{
+
+    color:#14532d;
+
+    font-size:1.6rem;
+
+    margin-bottom:25px;
+
+    font-weight:800;
+
+}
+
+.summary-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+    color:#374151;
+
+}
+
+.summary-row strong{
+
+    font-weight:700;
+
+}
+
+.discount{
+
+    color:#16a34a;
+
+}
+
+.order-summary hr{
+
+    border:none;
+
+    border-top:1px solid #e5e7eb;
+
+    margin:25px 0;
+
+}
+
+.summary-total{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:1.35rem;
+
+    font-weight:800;
+
+    color:#111827;
+
+    margin-bottom:30px;
+
+}
+
+.checkout-btn{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    width:100%;
+
+    text-decoration:none;
+
+    background:linear-gradient(135deg,#15803d,#16a34a);
+
+    color:white;
+
+    padding:18px;
+
+    border-radius:14px;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.checkout-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(22,163,74,.25);
+
+}
+
+.buyer-protection{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin:30px 0 20px;
+
+    gap:15px;
+
+}
+
+.buyer-protection div{
+
+    flex:1;
+
+    background:#f0fdf4;
+
+    border-radius:12px;
+
+    padding:14px;
+
+    text-align:center;
+
+}
+
+.buyer-protection svg{
+
+    color:#16a34a;
+
+    font-size:1.5rem;
+
+    margin-bottom:8px;
+
+}
+
+.buyer-protection span{
+
+    display:block;
+
+    color:#166534;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+}
+
+.summary-benefits{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.summary-benefits li{
+
+    padding:10px 0;
+
+    color:#64748b;
+
+    border-bottom:1px solid #f3f4f6;
+
+}
+
+.summary-benefits li:last-child{
+
+    border:none;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.order-summary{
+
+padding:22px;
+
+}
+
+.summary-total{
+
+font-size:1.2rem;
+
+}
+
+.buyer-protection{
+
+flex-direction:column;
+
+}
+
+}

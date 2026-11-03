@@ -1,0 +1,14 @@
+.review-filters{
+display:flex;
+gap:15px;
+margin:20px 0;
+flex-wrap:wrap;
+}
+
+.review-filters input,
+.review-filters select{
+padding:10px 14px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:14px;
+}

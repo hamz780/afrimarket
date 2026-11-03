@@ -1,0 +1,137 @@
+/* ========================================
+   SELLER SIDEBAR
+======================================== */
+
+.seller-sidebar{
+
+    width:270px;
+
+    min-height:100vh;
+
+    background:#14532d;
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    padding:30px 20px;
+
+}
+
+.seller-logo{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.seller-logo h2{
+
+    font-size:2rem;
+
+    margin-bottom:8px;
+
+}
+
+.seller-logo p{
+
+    color:#bbf7d0;
+
+}
+
+.seller-sidebar nav{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.seller-sidebar nav a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:14px 18px;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.seller-sidebar nav a:hover{
+
+    background:#16a34a;
+
+}
+
+.seller-sidebar nav a.active{
+
+    background:#22c55e;
+
+}
+
+.logout-btn{
+
+    margin-top:40px;
+
+    border:none;
+
+    background:#dc2626;
+
+    color:white;
+
+    height:52px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.logout-btn:hover{
+
+    background:#b91c1c;
+
+}
+
+@media(max-width:900px){
+
+.seller-sidebar{
+
+width:100%;
+
+min-height:auto;
+
+}
+
+}

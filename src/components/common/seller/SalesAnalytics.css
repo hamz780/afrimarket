@@ -1,0 +1,139 @@
+.sales-analytics {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.sales-analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.sales-analytics-header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #1f2937;
+}
+
+.sales-analytics-header p {
+  margin: 6px 0 0;
+  color: #6b7280;
+}
+
+.sales-analytics-header select {
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.sales-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.sales-stat {
+  padding: 18px;
+  background: #f9fafb;
+  border-radius: 12px;
+}
+
+.sales-stat span {
+  display: block;
+  color: #6b7280;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.sales-stat strong {
+  display: block;
+  font-size: 23px;
+  color: #111827;
+}
+
+.sales-stat small {
+  display: block;
+  margin-top: 6px;
+}
+
+.positive {
+  color: #16a34a;
+}
+
+.sales-chart {
+  padding-top: 10px;
+}
+
+.chart-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.chart-title h3 {
+  margin: 0;
+  color: #1f2937;
+}
+
+.chart-title span {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.chart-area {
+  height: 260px;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+}
+
+.chart-bars {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 12px;
+}
+
+.bar {
+  width: 6%;
+  min-height: 20px;
+  background: #f59e0b;
+  border-radius: 6px 6px 0 0;
+}
+
+.chart-labels {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .sales-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .sales-analytics-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .sales-summary {
+    grid-template-columns: 1fr;
+  }
+}

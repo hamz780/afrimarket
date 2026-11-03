@@ -1,0 +1,37 @@
+.seller-messages-page{
+    display:grid;
+    grid-template-columns:340px 1fr;
+    height:calc(100vh - 90px);
+    gap:20px;
+}
+
+.messages-sidebar{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid #e5e7eb;
+}
+
+.messages-content{
+    background:#fff;
+    border-radius:12px;
+    border:1px solid #e5e7eb;
+    overflow:hidden;
+}
+
+@media(max-width:900px){
+
+.seller-messages-page{
+grid-template-columns:1fr;
+height:auto;
+}
+
+.messages-sidebar{
+height:450px;
+}
+
+.messages-content{
+height:600px;
+}
+
+}

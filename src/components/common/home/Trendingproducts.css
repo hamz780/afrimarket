@@ -1,0 +1,1268 @@
+/* =========================================================
+   AFRIMARKET — TRENDING PRODUCTS
+   Premium Green + Gold Marketplace Design
+========================================================= */
+
+.trending-section {
+    position: relative;
+    width: 100%;
+
+    padding: 95px 6% 80px;
+
+    background:
+        radial-gradient(
+            circle at 8% 20%,
+            rgba(25, 135, 84, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 92% 75%,
+            rgba(229, 173, 25, 0.10),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #f4faf6 0%,
+            #ffffff 50%,
+            #fffaf0 100%
+        );
+
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DECORATIVE GLOWS
+========================================================= */
+
+.trending-glow {
+    position: absolute;
+
+    width: 270px;
+    height: 270px;
+
+    border-radius: 50%;
+
+    filter: blur(75px);
+
+    pointer-events: none;
+
+    opacity: 0.42;
+}
+
+.trending-glow-one {
+    top: -130px;
+    left: -110px;
+
+    background: rgba(25, 135, 84, 0.13);
+}
+
+.trending-glow-two {
+    right: -110px;
+    bottom: -140px;
+
+    background: rgba(229, 173, 25, 0.14);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.trending-container {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.trending-header {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 35px;
+
+    margin-bottom: 50px;
+}
+
+.trending-header-content {
+    max-width: 800px;
+}
+
+
+/* =========================================================
+   TRENDING TAG
+========================================================= */
+
+.trending-tag {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 9px;
+
+    padding: 9px 18px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid rgba(25, 135, 84, 0.16);
+
+    border-radius: 50px;
+
+    background: rgba(232, 245, 233, 0.9);
+
+    color: #176b43;
+
+    font-size: 12px;
+    font-weight: 850;
+
+    letter-spacing: 1.2px;
+
+    box-shadow:
+        0 7px 20px rgba(25, 135, 84, 0.07);
+
+    backdrop-filter: blur(8px);
+}
+
+.trending-tag svg {
+    color: #e5ad19;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.trending-header h2 {
+    margin: 0 0 15px;
+
+    color: #17231d;
+
+    font-size: clamp(35px, 4vw, 48px);
+
+    line-height: 1.08;
+
+    font-weight: 850;
+
+    letter-spacing: -1.4px;
+}
+
+.trending-header p {
+    max-width: 680px;
+
+    margin: 0;
+
+    color: #66716b;
+
+    font-size: 17px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   TRUST INDICATORS
+========================================================= */
+
+.trending-trust {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0;
+
+    margin-top: 25px;
+}
+
+.trending-trust-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding-right: 20px;
+    margin-right: 20px;
+
+    border-right: 1px solid #dce7df;
+
+    color: #58645d;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.trending-trust-item:last-child {
+    padding-right: 0;
+    margin-right: 0;
+
+    border-right: none;
+}
+
+.trending-trust-item svg {
+    color: #198754;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   LIVE MARKETPLACE
+========================================================= */
+
+.trending-live {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    flex-shrink: 0;
+
+    padding: 13px 17px;
+
+    border: 1px solid #e3ebe5;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    box-shadow:
+        0 9px 25px rgba(18, 45, 31, 0.07);
+
+    backdrop-filter: blur(10px);
+}
+
+.trending-live > div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.trending-live strong {
+    color: #26332c;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+.trending-live span:not(.live-dot) {
+    color: #7b857f;
+
+    font-size: 10px;
+}
+
+.live-dot {
+    width: 9px;
+    height: 9px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #198754;
+
+    box-shadow:
+        0 0 0 5px rgba(25, 135, 84, 0.10);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+.live-dot.live-active {
+    transform: scale(1.15);
+
+    box-shadow:
+        0 0 0 6px rgba(25, 135, 84, 0.12);
+}
+
+
+/* =========================================================
+   PRODUCT GRID
+========================================================= */
+
+.trending-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(275px, 1fr));
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.trending-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e5ece7;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 30px rgba(18, 45, 31, 0.08);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.trending-card:hover {
+    transform: translateY(-9px);
+
+    border-color: rgba(25, 135, 84, 0.24);
+
+    box-shadow:
+        0 23px 50px rgba(18, 45, 31, 0.14);
+}
+
+
+/* =========================================================
+   PRODUCT AREA
+========================================================= */
+
+.trending-product {
+    position: relative;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fbfdfb 0%,
+            #ffffff 100%
+        );
+}
+
+
+/* =========================================================
+   TRENDING BADGE
+========================================================= */
+
+.trending-badge {
+    position: absolute;
+
+    top: 17px;
+    left: 17px;
+
+    z-index: 20;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px 14px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #176b43,
+            #198754
+        );
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    letter-spacing: 0.7px;
+
+    box-shadow:
+        0 8px 19px rgba(25, 135, 84, 0.23);
+}
+
+.trending-badge svg {
+    color: #e5ad19;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RANK
+========================================================= */
+
+.trending-rank {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 20;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid rgba(229, 173, 25, 0.35);
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #b17f00;
+
+    font-size: 11px;
+
+    font-weight: 850;
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   DISCOUNT
+========================================================= */
+
+.trending-discount {
+    position: absolute;
+
+    top: 61px;
+    right: 18px;
+
+    z-index: 20;
+
+    padding: 7px 11px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d39a00,
+            #e5ad19
+        );
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    letter-spacing: 0.4px;
+
+    box-shadow:
+        0 7px 17px rgba(229, 173, 25, 0.22);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.trending-footer {
+    padding: 20px;
+
+    border-top: 1px solid #edf1ee;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   ACTIVITY ROW
+========================================================= */
+
+.trending-activity {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-bottom: 16px;
+}
+
+.live-view,
+.sold {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    min-width: 0;
+
+    padding: 9px 10px;
+
+    border-radius: 10px;
+
+    background: #f7faf8;
+
+    color: #53615a;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.live-view svg {
+    color: #198754;
+
+    flex-shrink: 0;
+
+    font-size: 12px;
+}
+
+.sold svg {
+    color: #e5ad19;
+
+    flex-shrink: 0;
+
+    font-size: 11px;
+}
+
+.live-view span,
+.sold span {
+    color: #26332c;
+
+    font-weight: 850;
+}
+
+.live-view small,
+.sold small {
+    color: #7c8580;
+
+    font-size: 9px;
+
+    font-weight: 550;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.trending-rating {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.trending-rating-stars {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.trending-rating-stars svg {
+    color: #e5ad19;
+
+    font-size: 14px;
+}
+
+.trending-rating-stars strong {
+    color: #29362f;
+
+    font-size: 14px;
+
+    font-weight: 850;
+}
+
+.trending-rating > span {
+    color: #7a847e;
+
+    font-size: 12px;
+
+    font-weight: 550;
+}
+
+
+/* =========================================================
+   SELLER
+========================================================= */
+
+.trending-seller {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 17px;
+}
+
+.trending-verified {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #198754;
+
+    font-size: 11px;
+
+    font-weight: 750;
+}
+
+.verified-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 17px;
+    height: 17px;
+
+    border-radius: 50%;
+
+    background: #198754;
+
+    color: #ffffff;
+
+    font-size: 8px;
+}
+
+.trending-stock {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 10px;
+
+    font-weight: 750;
+
+    white-space: nowrap;
+}
+
+.trending-stock svg {
+    font-size: 11px;
+}
+
+.trend-stock-good {
+    color: #198754;
+}
+
+.trend-stock-low {
+    color: #c88d00;
+}
+
+.trend-stock-soldout {
+    color: #9a9a9a;
+}
+
+
+/* =========================================================
+   ADD TO CART BUTTON
+========================================================= */
+
+.trending-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 13px 17px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #176b43,
+            #198754
+        );
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 9px 22px rgba(25, 135, 84, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.trending-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #145d3b,
+            #167447
+        );
+
+    box-shadow:
+        0 13px 28px rgba(25, 135, 84, 0.26);
+}
+
+.trending-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.trending-btn:disabled {
+    background: #d8ddd9;
+
+    color: #777e79;
+
+    cursor: not-allowed;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   BUTTON ARROW
+========================================================= */
+
+.trending-btn-arrow {
+    margin-left: auto;
+
+    font-size: 11px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.trending-btn:hover:not(:disabled) .trending-btn-arrow {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   ADDED TO CART
+========================================================= */
+
+.trending-btn-added {
+    background:
+        linear-gradient(
+            135deg,
+            #c89400,
+            #e5ad19
+        ) !important;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 10px 24px rgba(229, 173, 25, 0.25);
+}
+
+
+/* =========================================================
+   BOTTOM SECTION
+========================================================= */
+
+.trending-bottom {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-top: 43px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #dfe8e2;
+}
+
+.trending-bottom-message {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.trending-bottom-message > div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.trending-bottom-message strong {
+    color: #26332c;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+.trending-bottom-message span:not(.bottom-fire) {
+    color: #78827c;
+
+    font-size: 11px;
+}
+
+.bottom-fire {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8f5e9,
+            #fff7dc
+        );
+
+    color: #d49f08;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   VIEW ALL
+========================================================= */
+
+.trending-view-all {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 13px 23px;
+
+    border: 1px solid rgba(25, 135, 84, 0.25);
+
+    border-radius: 50px;
+
+    background: #ffffff;
+
+    color: #176b43;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(25, 135, 84, 0.07);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.trending-view-all svg {
+    font-size: 12px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.trending-view-all:hover {
+    background: #198754;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 11px 25px rgba(25, 135, 84, 0.18);
+}
+
+.trending-view-all:hover svg {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.no-products {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 320px;
+
+    padding: 55px 25px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f7fbf8
+        );
+
+    border: 1px solid #e4ece6;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 12px 35px rgba(18, 45, 31, 0.07);
+}
+
+.empty-trending-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 68px;
+    height: 68px;
+
+    margin-bottom: 20px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8f5e9,
+            #fff7dc
+        );
+
+    color: #d49f08;
+
+    font-size: 27px;
+
+    box-shadow:
+        0 10px 25px rgba(229, 173, 25, 0.12);
+}
+
+.no-products h3 {
+    margin: 0 0 10px;
+
+    color: #26332c;
+
+    font-size: 24px;
+
+    font-weight: 800;
+}
+
+.no-products p {
+    max-width: 520px;
+
+    margin: 0 0 24px;
+
+    color: #717b75;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.trending-btn:focus-visible,
+.trending-view-all:focus-visible {
+    outline: 3px solid rgba(229, 173, 25, 0.45);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   LARGE TABLETS
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .trending-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .trending-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .trending-section {
+        padding: 75px 25px 65px;
+    }
+
+    .trending-header {
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .trending-header-content {
+        max-width: 700px;
+    }
+
+    .trending-header p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .trending-trust {
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        row-gap: 12px;
+    }
+
+    .trending-live {
+        align-self: center;
+    }
+
+    .trending-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+    .trending-bottom {
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .trending-bottom-message {
+        justify-content: center;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .trending-section {
+        padding: 65px 18px 55px;
+    }
+
+    .trending-header {
+        margin-bottom: 35px;
+    }
+
+    .trending-header h2 {
+        font-size: 32px;
+
+        letter-spacing: -0.8px;
+    }
+
+    .trending-header p {
+        font-size: 15px;
+    }
+
+    .trending-trust {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 10px;
+
+        margin-top: 22px;
+    }
+
+    .trending-trust-item {
+        padding: 0;
+        margin: 0;
+
+        border-right: none;
+    }
+
+    .trending-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trending-card {
+        max-width: 520px;
+
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+    .trending-activity {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .trending-section {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .trending-header h2 {
+        font-size: 28px;
+    }
+
+    .trending-tag {
+        padding: 8px 14px;
+
+        font-size: 10px;
+    }
+
+    .trending-live {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .trending-badge {
+        top: 13px;
+        left: 13px;
+
+        padding: 7px 11px;
+
+        font-size: 9px;
+    }
+
+    .trending-rank {
+        top: 13px;
+        right: 13px;
+
+        width: 30px;
+        height: 30px;
+
+        font-size: 10px;
+    }
+
+    .trending-discount {
+        top: 50px;
+        right: 13px;
+
+        padding: 6px 9px;
+
+        font-size: 9px;
+    }
+
+    .trending-footer {
+        padding: 17px;
+    }
+
+    .trending-activity {
+        grid-template-columns: 1fr;
+
+        gap: 7px;
+    }
+
+    .trending-seller {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .trending-view-all {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .trending-card,
+    .trending-btn,
+    .trending-view-all,
+    .trending-btn-arrow,
+    .trending-view-all svg,
+    .live-dot {
+        transition: none;
+    }
+
+}

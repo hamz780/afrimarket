@@ -1,0 +1,133 @@
+/* ==========================================
+   PROMO CODE
+========================================== */
+
+.promo-code{
+
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.promo-box{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+.promo-input{
+
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    border:2px solid #e5e7eb;
+
+    border-radius:15px;
+
+    padding:0 18px;
+
+    height:58px;
+
+}
+
+.promo-input svg{
+
+    color:#16a34a;
+
+}
+
+.promo-input input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    font-size:1rem;
+
+}
+
+.promo-box button{
+
+    background:#16a34a;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:0 28px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.promo-box button:hover{
+
+    background:#15803d;
+
+}
+
+.promo-code small{
+
+    display:block;
+
+    margin-top:18px;
+
+    color:#64748b;
+
+}
+
+@media(max-width:768px){
+
+.promo-box{
+
+flex-direction:column;
+
+}
+
+.promo-box button{
+
+height:55px;
+
+justify-content:center;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.promo-code{
+
+padding:20px;
+
+}
+
+}

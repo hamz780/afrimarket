@@ -1,0 +1,1632 @@
+/* =========================================================
+   AFRIMARKET PREMIUM HERO
+   Corporate • Luxury • African • Global
+========================================================= */
+
+.hero-banner {
+  position: relative;
+  min-height: 620px;
+
+  margin: 20px 0 40px;
+
+  padding: 70px 70px 35px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(38, 112, 82, 0.35),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #061812 0%,
+      #0a241b 45%,
+      #0d3325 100%
+    );
+
+  color: #f8f8f3;
+
+  box-shadow:
+    0 30px 70px rgba(4, 25, 18, 0.25);
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+========================================================= */
+
+.hero-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  filter: blur(1px);
+}
+
+.hero-glow-one {
+  width: 420px;
+  height: 420px;
+
+  right: -180px;
+  top: -180px;
+
+  background: rgba(214, 179, 106, 0.08);
+
+  border: 1px solid rgba(214, 179, 106, 0.12);
+}
+
+.hero-glow-two {
+  width: 320px;
+  height: 320px;
+
+  left: -170px;
+  bottom: -180px;
+
+  background: rgba(28, 104, 77, 0.22);
+}
+
+
+/* Subtle geometric pattern */
+
+.hero-pattern {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  opacity: 0.16;
+
+  background-image:
+    linear-gradient(
+      30deg,
+      transparent 12%,
+      rgba(214, 179, 106, 0.12) 12.5%,
+      transparent 13%
+    ),
+    linear-gradient(
+      150deg,
+      transparent 12%,
+      rgba(214, 179, 106, 0.12) 12.5%,
+      transparent 13%
+    );
+
+  background-size: 70px 70px;
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 35%,
+    black 75%,
+    transparent
+  );
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.hero-content {
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(420px, 0.95fr);
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.hero-copy {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.hero-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 24px;
+
+  color: #d6b36a;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+}
+
+
+.eyebrow-line {
+  width: 35px;
+
+  height: 1px;
+
+  background: #d6b36a;
+}
+
+
+.hero-copy h1 {
+  max-width: 700px;
+
+  margin: 0;
+
+  font-size: clamp(44px, 5vw, 72px);
+
+  line-height: 1.02;
+
+  letter-spacing: -2.5px;
+
+  font-weight: 800;
+}
+
+
+.hero-copy h1 span {
+  display: block;
+
+  color: #d6b36a;
+
+  background: linear-gradient(
+    90deg,
+    #d6b36a,
+    #ead59d
+  );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+
+.hero-description {
+  max-width: 600px;
+
+  margin: 28px 0 34px;
+
+  color: #b9c8c1;
+
+  font-size: 17px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+}
+
+
+.hero-primary-btn {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 16px 25px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #d6b36a;
+
+  color: #071a13;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.hero-primary-btn span {
+  font-size: 21px;
+
+  transition: transform 0.3s ease;
+}
+
+
+.hero-primary-btn:hover {
+  transform: translateY(-3px);
+
+  background: #e5ca8d;
+
+  box-shadow:
+    0 12px 30px rgba(214, 179, 106, 0.2);
+}
+
+
+.hero-primary-btn:hover span {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   AI BUTTON
+========================================================= */
+
+.ai-banner-btn {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 15px 21px;
+
+  border: 1px solid rgba(214, 179, 106, 0.55);
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #f1dfb4;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.ai-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 23px;
+  height: 23px;
+
+  border-radius: 50%;
+
+  background: rgba(214, 179, 106, 0.15);
+
+  color: #d6b36a;
+
+  font-size: 13px;
+}
+
+
+.ai-banner-btn:hover {
+  transform: translateY(-3px);
+
+  background: rgba(214, 179, 106, 0.12);
+
+  border-color: #d6b36a;
+}
+
+
+/* =========================================================
+   TRUST FEATURES
+========================================================= */
+
+.hero-trust {
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  margin-top: 45px;
+
+  flex-wrap: wrap;
+}
+
+
+.trust-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.trust-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid rgba(214, 179, 106, 0.35);
+
+  border-radius: 50%;
+
+  color: #d6b36a;
+
+  font-size: 12px;
+}
+
+
+.trust-item strong {
+  display: block;
+
+  margin-bottom: 2px;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  color: #f2f4ef;
+}
+
+
+.trust-item small {
+  display: block;
+
+  color: #80968c;
+
+  font-size: 10px;
+}
+
+
+.trust-divider {
+  width: 1px;
+
+  height: 30px;
+
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.hero-visual {
+  position: relative;
+
+  min-height: 450px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* Decorative rings */
+
+.visual-ring {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(214, 179, 106, 0.16);
+
+  pointer-events: none;
+}
+
+
+.ring-one {
+  width: 470px;
+  height: 470px;
+}
+
+
+.ring-two {
+  width: 350px;
+  height: 350px;
+
+  border-color: rgba(214, 179, 106, 0.1);
+}
+
+
+/* =========================================================
+   PREMIUM MAIN CARD
+========================================================= */
+
+.hero-card {
+  position: relative;
+
+  width: 350px;
+
+  min-height: 400px;
+
+  padding: 30px;
+
+  border: 1px solid rgba(214, 179, 106, 0.3);
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.035)
+    );
+
+  backdrop-filter: blur(25px);
+
+  box-shadow:
+    0 35px 70px rgba(0, 0, 0, 0.35);
+
+  transform: rotate(2deg);
+
+  z-index: 3;
+}
+
+
+.hero-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  border-radius: 18px;
+
+  pointer-events: none;
+}
+
+
+.card-top {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+}
+
+
+.card-label {
+  color: #d6b36a;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.card-top h3 {
+  margin: 10px 0 0;
+
+  color: #f7f7f2;
+
+  font-size: 28px;
+
+  line-height: 1.1;
+
+  letter-spacing: -1px;
+}
+
+
+.card-symbol {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(214, 179, 106, 0.35);
+
+  border-radius: 50%;
+
+  color: #d6b36a;
+
+  font-size: 18px;
+}
+
+
+/* Center */
+
+.card-center {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  height: 230px;
+}
+
+
+.africa-symbol {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  color: rgba(214, 179, 106, 0.8);
+
+  font-size: 17px;
+
+  font-weight: 900;
+
+  letter-spacing: 5px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 179, 106, 0.16),
+      rgba(214, 179, 106, 0.025) 65%
+    );
+
+  border: 1px solid rgba(214, 179, 106, 0.25);
+
+  box-shadow:
+    inset 0 0 50px rgba(214, 179, 106, 0.06),
+    0 0 60px rgba(214, 179, 106, 0.06);
+}
+
+
+.africa-symbol::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 18px;
+
+  border: 1px dashed rgba(214, 179, 106, 0.28);
+
+  border-radius: 50%;
+}
+
+
+/* Bottom */
+
+.card-bottom {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.card-bottom span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #84988f;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.5px;
+}
+
+
+.card-bottom strong {
+  color: #f4f3ed;
+
+  font-size: 14px;
+}
+
+
+.card-arrow {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: #d6b36a;
+
+  color: #071a13;
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
+
+.floating-card {
+  position: absolute;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 12px;
+
+  background: rgba(7, 27, 20, 0.75);
+
+  backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.25);
+
+  z-index: 5;
+}
+
+
+.floating-card strong {
+  display: block;
+
+  color: #f4f4ee;
+
+  font-size: 11px;
+}
+
+
+.floating-card small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #82958c;
+
+  font-size: 9px;
+}
+
+
+.floating-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+
+  border-radius: 8px;
+
+  background: rgba(214, 179, 106, 0.12);
+
+  color: #d6b36a;
+
+  font-size: 12px;
+}
+
+
+.floating-card-one {
+  top: 48px;
+
+  left: 15px;
+}
+
+
+.floating-card-two {
+  right: -5px;
+
+  top: 190px;
+}
+
+
+.floating-card-three {
+  bottom: 45px;
+
+  left: 20px;
+}
+
+
+/* =========================================================
+   HERO BOTTOM
+========================================================= */
+
+.hero-bottom {
+  max-width: 1400px;
+
+  margin: 35px auto 0;
+
+  padding-top: 22px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+.hero-slide-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #82958c;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+
+.slide-progress {
+  position: relative;
+
+  width: 100px;
+
+  height: 2px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+.slide-progress-fill {
+  width: 100%;
+
+  height: 100%;
+
+  background: #d6b36a;
+
+  transform-origin: left;
+
+  animation: progress 6s linear;
+}
+
+
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+
+/* Dots */
+
+.hero-dots {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.hero-dot {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.25);
+
+  cursor: pointer;
+
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.hero-dot.active {
+  width: 25px;
+
+  border-radius: 10px;
+
+  background: #d6b36a;
+}
+
+
+.hero-location {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #82958c;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   AFRIMARKET AI CHAT
+========================================================= */
+
+.ai-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99999;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: flex-end;
+
+  padding: 25px;
+
+  background: rgba(0, 0, 0, 0.18);
+
+  backdrop-filter: blur(2px);
+
+  animation: aiOverlayIn 0.25s ease;
+}
+
+
+.ai-chat {
+  position: relative;
+
+  width: 390px;
+
+  height: 600px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(214, 179, 106, 0.4);
+
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(38, 112, 82, 0.3),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #071b14,
+      #0a241b 55%,
+      #0d3023
+    );
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
+
+  animation: aiChatIn 0.35s ease;
+}
+
+
+/* =========================================================
+   AI HEADER
+========================================================= */
+
+.ai-chat-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 18px 20px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(4, 20, 14, 0.55);
+
+  backdrop-filter: blur(20px);
+}
+
+
+.ai-header-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.ai-avatar {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(214, 179, 106, 0.4);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 179, 106, 0.2),
+      rgba(214, 179, 106, 0.04)
+    );
+
+  color: #d6b36a;
+
+  font-size: 20px;
+
+  box-shadow:
+    0 0 25px rgba(214, 179, 106, 0.08);
+}
+
+
+.ai-header-info strong {
+  display: block;
+
+  color: #f7f5ed;
+
+  font-size: 15px;
+
+  font-weight: 800;
+}
+
+
+.ai-header-info span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #7fc49f;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+
+.ai-close {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #aebdb6;
+
+  font-size: 24px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.ai-close:hover {
+  background: rgba(214, 179, 106, 0.12);
+
+  border-color: rgba(214, 179, 106, 0.35);
+
+  color: #d6b36a;
+}
+
+
+/* =========================================================
+   AI MESSAGES
+========================================================= */
+
+.ai-messages {
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 22px 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 13px;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(214, 179, 106, 0.3)
+    transparent;
+}
+
+
+.ai-messages::-webkit-scrollbar {
+  width: 5px;
+}
+
+
+.ai-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.ai-messages::-webkit-scrollbar-thumb {
+  background: rgba(214, 179, 106, 0.3);
+
+  border-radius: 10px;
+}
+
+
+.ai-message {
+  max-width: 82%;
+
+  padding: 12px 15px;
+
+  border-radius: 16px;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  word-wrap: break-word;
+
+  white-space: pre-wrap;
+}
+
+
+.assistant-message {
+  align-self: flex-start;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  border-bottom-left-radius: 5px;
+
+  background: rgba(255, 255, 255, 0.055);
+
+  color: #d9e2dd;
+}
+
+
+.user-message {
+  align-self: flex-end;
+
+  border: 1px solid rgba(214, 179, 106, 0.25);
+
+  border-bottom-right-radius: 5px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(214, 179, 106, 0.22),
+      rgba(214, 179, 106, 0.1)
+    );
+
+  color: #f4e8c7;
+}
+
+
+/* =========================================================
+   AI TYPING INDICATOR
+========================================================= */
+
+.ai-typing {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  width: fit-content;
+
+  min-width: 52px;
+
+  padding: 13px 15px;
+}
+
+
+.ai-typing span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #d6b36a;
+
+  animation: aiTyping 1.2s infinite ease-in-out;
+}
+
+
+.ai-typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+
+.ai-typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+
+@keyframes aiTyping {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+
+    transform: translateY(-3px);
+  }
+}
+
+
+/* =========================================================
+   AI INPUT
+========================================================= */
+
+.ai-input-area {
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 10px;
+
+  padding: 14px 15px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(4, 20, 14, 0.6);
+
+  backdrop-filter: blur(20px);
+}
+
+
+.ai-input-area textarea {
+  flex: 1;
+
+  min-height: 45px;
+
+  max-height: 100px;
+
+  padding: 13px 14px;
+
+  resize: none;
+
+  outline: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 13px;
+
+  background: rgba(255, 255, 255, 0.055);
+
+  color: #f2f4ef;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.ai-input-area textarea::placeholder {
+  color: #71857c;
+}
+
+
+.ai-input-area textarea:focus {
+  border-color: rgba(214, 179, 106, 0.45);
+
+  background: rgba(255, 255, 255, 0.075);
+}
+
+
+.ai-input-area textarea:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   AI SEND BUTTON
+========================================================= */
+
+.ai-send {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(214, 179, 106, 0.4);
+
+  border-radius: 13px;
+
+  background: #d6b36a;
+
+  color: #071a13;
+
+  font-size: 22px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.ai-send:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  background: #e5ca8d;
+
+  box-shadow:
+    0 8px 22px rgba(214, 179, 106, 0.2);
+}
+
+
+.ai-send:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+
+.ai-send:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   AI FOOTER
+========================================================= */
+
+.ai-powered {
+  padding: 8px 15px 11px;
+
+  text-align: center;
+
+  color: #62766d;
+
+  background: rgba(4, 20, 14, 0.6);
+
+  font-size: 9px;
+
+  letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   AI ANIMATIONS
+========================================================= */
+
+@keyframes aiOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes aiChatIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(25px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .hero-banner {
+    padding: 55px 45px 30px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .hero-copy {
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    justify-content: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-trust {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    min-height: 420px;
+  }
+
+  .hero-bottom {
+    margin-top: 20px;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .hero-banner {
+    min-height: auto;
+
+    margin: 10px 0 25px;
+
+    padding: 45px 22px 25px;
+
+    border-radius: 20px;
+  }
+
+  .hero-copy h1 {
+    font-size: 42px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .hero-primary-btn,
+  .ai-banner-btn {
+    justify-content: center;
+
+    width: 100%;
+  }
+
+  .hero-trust {
+    gap: 14px;
+
+    justify-content: center;
+  }
+
+  .trust-divider {
+    display: none;
+  }
+
+  .hero-visual {
+    min-height: 360px;
+  }
+
+  .hero-card {
+    width: 270px;
+
+    min-height: 330px;
+
+    padding: 22px;
+  }
+
+  .card-center {
+    height: 185px;
+  }
+
+  .africa-symbol {
+    width: 140px;
+    height: 140px;
+  }
+
+  .floating-card-one {
+    left: -5px;
+  }
+
+  .floating-card-two {
+    right: -5px;
+  }
+
+  .floating-card-three {
+    left: 0;
+
+    bottom: 20px;
+  }
+
+  .hero-bottom {
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .hero-location {
+    display: none;
+  }
+
+
+  /* =======================================================
+     AI MOBILE CHAT
+  ======================================================= */
+
+  .ai-overlay {
+    align-items: flex-end;
+
+    justify-content: center;
+
+    padding: 10px;
+  }
+
+
+  .ai-chat {
+    width: 100%;
+
+    height: min(650px, calc(100vh - 20px));
+
+    border-radius: 20px;
+  }
+
+
+  .ai-chat-header {
+    padding: 16px;
+  }
+
+
+  .ai-messages {
+    padding: 18px 14px;
+  }
+
+
+  .ai-message {
+    max-width: 88%;
+
+    font-size: 13px;
+  }
+
+
+  .ai-input-area {
+    padding: 12px;
+  }
+
+
+  .ai-input-area textarea {
+    font-size: 13px;
+  }
+}

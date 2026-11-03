@@ -1,0 +1,231 @@
+/* ===============================
+   ORDER DETAILS
+================================= */
+
+.order-details-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+
+gap:24px;
+
+margin-bottom:30px;
+
+}
+
+.order-card{
+
+background:#ffffff;
+
+border:1px solid #e5e7eb;
+
+border-radius:16px;
+
+padding:24px;
+
+box-shadow:0 4px 15px rgba(0,0,0,.05);
+
+}
+
+.order-card h2{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:1.2rem;
+
+margin-bottom:20px;
+
+color:#111827;
+
+}
+
+/* ===============================
+   DETAIL ROWS
+================================= */
+
+.detail-row{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:14px 0;
+
+border-bottom:1px solid #f3f4f6;
+
+gap:20px;
+
+}
+
+.detail-row:last-child{
+
+border-bottom:none;
+
+}
+
+.detail-row strong{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+color:#374151;
+
+}
+
+.detail-row span{
+
+color:#6b7280;
+
+text-align:right;
+
+}
+
+.total-row{
+
+font-size:1.1rem;
+
+padding-top:18px;
+
+margin-top:12px;
+
+border-top:2px solid #e5e7eb;
+
+}
+
+/* ===============================
+   PRODUCTS TABLE
+================================= */
+
+.order-items-table{
+
+width:100%;
+
+border-collapse:collapse;
+
+margin-top:10px;
+
+}
+
+.order-items-table th{
+
+background:#f9fafb;
+
+padding:14px;
+
+text-align:left;
+
+font-size:.95rem;
+
+font-weight:700;
+
+border-bottom:1px solid #e5e7eb;
+
+}
+
+.order-items-table td{
+
+padding:14px;
+
+border-bottom:1px solid #f3f4f6;
+
+font-size:.95rem;
+
+}
+
+/* ===============================
+   ACTIONS
+================================= */
+
+.order-details-actions{
+
+display:flex;
+
+justify-content:flex-end;
+
+gap:16px;
+
+margin-top:30px;
+
+}
+
+/* ===============================
+   ORDER NOT FOUND
+================================= */
+
+.order-not-found{
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+gap:20px;
+
+}
+
+.order-not-found h2{
+
+font-size:2rem;
+
+color:#111827;
+
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media(max-width:768px){
+
+.order-details-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.detail-row{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.detail-row span{
+
+text-align:left;
+
+}
+
+.order-details-actions{
+
+flex-direction:column;
+
+}
+
+.order-items-table{
+
+display:block;
+
+overflow-x:auto;
+
+white-space:nowrap;
+
+}
+
+}

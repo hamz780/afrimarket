@@ -1,0 +1,189 @@
+/* ==========================================
+   EARNINGS CARD
+========================================== */
+
+.earnings-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  margin: 30px 0;
+  border: 1px solid #e5e7eb;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.earnings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.earnings-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #14532d;
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.earnings-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* ==========================================
+   GROWTH BADGE
+========================================== */
+
+.earnings-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #dcfce7;
+  color: #16a34a;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   EARNINGS GRID
+========================================== */
+
+.earnings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.earning-box {
+  background: #f8fafc;
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid #eef2f7;
+}
+
+.earning-box svg {
+  font-size: 2rem;
+  color: #16a34a;
+  margin-bottom: 15px;
+}
+
+.earning-box h3 {
+  color: #64748b;
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.earning-box h1 {
+  color: #111827;
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.earnings-footer {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #e5e7eb;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.earnings-footer span {
+  display: block;
+  color: #64748b;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.earnings-footer strong {
+  color: #16a34a;
+  font-size: 1.4rem;
+}
+
+/* ==========================================
+   WITHDRAW BUTTON
+========================================== */
+
+.earnings-footer button {
+  background: #16a34a;
+  color: #ffffff;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.earnings-footer button:hover {
+  background: #15803d;
+  transform: translateY(-1px);
+}
+
+.earnings-footer button:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+  .earnings-card {
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  .earnings-header,
+  .earnings-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .earnings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .earnings-footer button {
+    width: 100%;
+  }
+
+  .earnings-badge {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .earnings-card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .earning-box {
+    padding: 20px;
+  }
+
+  .earning-box h1 {
+    font-size: 1.6rem;
+  }
+}

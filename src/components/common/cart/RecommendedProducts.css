@@ -1,0 +1,111 @@
+/* ==========================================
+   RECOMMENDED PRODUCTS
+========================================== */
+
+.recommended-products{
+
+    margin-top:60px;
+
+}
+
+.recommended-header{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.recommended-tag{
+
+    display:inline-block;
+
+    background:#ecfdf5;
+
+    color:#15803d;
+
+    padding:8px 18px;
+
+    border-radius:40px;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.recommended-header h2{
+
+    font-size:2.2rem;
+
+    color:#14532d;
+
+    margin-bottom:12px;
+
+    font-weight:800;
+
+}
+
+.recommended-header p{
+
+    color:#64748b;
+
+    max-width:650px;
+
+    margin:auto;
+
+    line-height:1.7;
+
+}
+
+.recommended-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.recommended-card{
+
+    transition:.35s;
+
+}
+
+.recommended-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/* Responsive */
+
+@media(max-width:1200px){
+
+.recommended-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:650px){
+
+.recommended-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.recommended-header h2{
+
+font-size:1.8rem;
+
+}
+
+}

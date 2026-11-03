@@ -1,0 +1,28 @@
+.rating-stars{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.rating-icons{
+  display:flex;
+  gap:2px;
+  color:#f59e0b;
+}
+
+.rating-value{
+  color:var(--text-secondary);
+  font-weight:600;
+}
+
+.rating-sm .rating-icons{
+  font-size:.85rem;
+}
+
+.rating-md .rating-icons{
+  font-size:1rem;
+}
+
+.rating-lg .rating-icons{
+  font-size:1.3rem;
+}

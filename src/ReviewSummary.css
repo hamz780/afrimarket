@@ -1,0 +1,72 @@
+.review-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.review-summary-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.review-summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.review-summary-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.review-summary-content h4 {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.review-summary-content h2 {
+  margin-top: 8px;
+  color: var(--text-primary);
+  font-size: 1.8rem;
+}
+
+.review-summary-card.primary .review-summary-icon {
+  background: rgba(59,130,246,.15);
+  color: #3b82f6;
+}
+
+.review-summary-card.success .review-summary-icon {
+  background: rgba(16,185,129,.15);
+  color: #10b981;
+}
+
+.review-summary-card.warning .review-summary-icon {
+  background: rgba(245,158,11,.15);
+  color: #f59e0b;
+}
+
+.review-summary-card.danger .review-summary-icon {
+  background: rgba(239,68,68,.15);
+  color: #ef4444;
+}
+
+@media (max-width:768px){
+  .review-summary-grid{
+    grid-template-columns:1fr;
+  }
+}

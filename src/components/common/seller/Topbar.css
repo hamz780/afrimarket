@@ -1,0 +1,184 @@
+.seller-topbar {
+  height: 80px;
+  background: #ffffff;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+}
+
+.topbar-search {
+  width: min(500px, 50%);
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f6f7f9;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0 14px;
+  color: #777;
+}
+
+.topbar-search input {
+  flex: 1;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+.clear-search {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #888;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.topbar-dropdown-wrapper {
+  position: relative;
+}
+
+.topbar-icon-button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #eeeeee;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+  color: #555;
+}
+
+.topbar-icon-button:hover {
+  color: #ff7a00;
+  background: #fff7ef;
+}
+
+.notification-dot {
+  width: 7px;
+  height: 7px;
+  background: #ff7a00;
+  border-radius: 50%;
+  position: absolute;
+  right: 8px;
+  top: 7px;
+}
+
+.seller-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.seller-profile > svg {
+  font-size: 38px;
+  color: #ff7a00;
+}
+
+.seller-profile strong,
+.seller-profile span {
+  display: block;
+}
+
+.seller-profile strong {
+  color: #222;
+  font-size: 14px;
+}
+
+.seller-profile span {
+  color: #888;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.topbar-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 12px);
+  width: 270px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  padding: 16px;
+  z-index: 1000;
+}
+
+.topbar-dropdown h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.notification-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.notification-item strong,
+.notification-item span {
+  display: block;
+}
+
+.notification-item strong {
+  font-size: 13px;
+}
+
+.notification-item span {
+  color: #777;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.profile-dropdown {
+  padding: 8px;
+}
+
+.profile-dropdown a,
+.profile-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 11px 12px;
+  border: 0;
+  background: transparent;
+  text-decoration: none;
+  text-align: left;
+  color: #444;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.profile-dropdown a:hover,
+.profile-dropdown button:hover {
+  background: #fff4e8;
+  color: #ff7a00;
+}
+
+@media (max-width: 768px) {
+  .seller-topbar {
+    padding: 0 15px;
+  }
+
+  .topbar-search {
+    width: 55%;
+  }
+
+  .seller-profile div {
+    display: none;
+  }
+}

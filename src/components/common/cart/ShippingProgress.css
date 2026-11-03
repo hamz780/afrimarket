@@ -1,0 +1,114 @@
+/* ==========================================
+   SHIPPING PROGRESS
+========================================== */
+
+.shipping-progress{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+    margin-bottom:25px;
+
+}
+
+.shipping-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:20px;
+
+}
+
+.shipping-header h3{
+
+    color:#166534;
+
+    font-size:1.4rem;
+
+    margin-bottom:8px;
+
+    font-weight:700;
+
+}
+
+.shipping-header p{
+
+    color:#64748b;
+
+    line-height:1.6;
+
+}
+
+.shipping-header strong{
+
+    color:#f59e0b;
+
+    font-size:1.1rem;
+
+    white-space:nowrap;
+
+}
+
+/* Progress */
+
+.progress-bar{
+
+    width:100%;
+
+    height:14px;
+
+    background:#e5e7eb;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        #16a34a,
+        #22c55e,
+        #84cc16
+    );
+
+    transition:width .6s ease;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.shipping-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+.shipping-header strong{
+
+    font-size:1rem;
+
+}
+
+}

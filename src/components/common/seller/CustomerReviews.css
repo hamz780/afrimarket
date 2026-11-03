@@ -1,0 +1,117 @@
+/* ==========================================
+   CUSTOMER REVIEWS
+========================================== */
+
+.customer-reviews{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    margin:30px 0;
+
+}
+
+.reviews-header{
+
+    margin-bottom:25px;
+
+}
+
+.reviews-header h2{
+
+    color:#14532d;
+
+}
+
+.reviews-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.review-card{
+
+    border:1px solid #e5e7eb;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    transition:.3s;
+
+}
+
+.review-card:hover{
+
+    background:#f8fafc;
+
+}
+
+.review-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:12px;
+
+}
+
+.review-top h4{
+
+    color:#111827;
+
+    margin-bottom:4px;
+
+}
+
+.review-top small{
+
+    color:#64748b;
+
+}
+
+.review-stars{
+
+    display:flex;
+
+    gap:4px;
+
+    color:#facc15;
+
+    font-size:1rem;
+
+}
+
+.review-card p{
+
+    color:#475569;
+
+    line-height:1.6;
+
+}
+
+@media(max-width:768px){
+
+.review-top{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+}
+
+}

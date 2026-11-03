@@ -1,0 +1,307 @@
+/* ===========================
+   AFRIMARKET WISHLIST PAGE
+=========================== */
+
+
+.wishlist-page{
+
+    padding:70px 8%;
+
+    background:#f8fafc;
+
+    min-height:100vh;
+
+}
+
+
+
+/* ===========================
+   HEADER
+=========================== */
+
+
+.wishlist-header{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+
+.wishlist-header h1{
+
+    font-size:3rem;
+
+    color:#111827;
+
+    margin-bottom:15px;
+
+}
+
+
+.wishlist-header p{
+
+    color:#64748b;
+
+    font-size:1.1rem;
+
+}
+
+
+
+
+
+/* ===========================
+   GRID
+=========================== */
+
+
+.wishlist-grid{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.wishlist-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+
+
+
+/* ===========================
+   ACTIONS
+=========================== */
+
+
+.wishlist-actions{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:15px;
+
+}
+
+
+
+.wishlist-actions button{
+
+    flex:1;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+
+
+.move-cart{
+
+    background:#16a34a;
+
+    color:white;
+
+}
+
+
+.move-cart:hover{
+
+    background:#15803d;
+
+}
+
+
+
+
+
+.remove-wishlist{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+
+
+.remove-wishlist:hover{
+
+    background:#dc2626;
+
+    color:white;
+
+}
+
+
+
+
+
+/* ===========================
+   EMPTY STATE
+=========================== */
+
+
+.empty-wishlist{
+
+    max-width:600px;
+
+    margin:80px auto;
+
+    background:white;
+
+    padding:50px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+}
+
+
+
+.empty-wishlist svg{
+
+    font-size:4rem;
+
+    color:#ef4444;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.empty-wishlist h1{
+
+    color:#111827;
+
+}
+
+
+
+.empty-wishlist p{
+
+    color:#64748b;
+
+    margin:15px 0 30px;
+
+}
+
+
+
+.empty-wishlist a{
+
+    display:inline-block;
+
+    background:#16a34a;
+
+    color:white;
+
+    padding:14px 25px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+}
+
+
+
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+
+@media(max-width:1100px){
+
+
+    .wishlist-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+    .wishlist-page{
+
+        padding:40px 5%;
+
+    }
+
+
+
+    .wishlist-header h1{
+
+        font-size:2.2rem;
+
+    }
+
+
+
+    .wishlist-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .wishlist-actions{
+
+        flex-direction:column;
+
+    }
+
+
+}

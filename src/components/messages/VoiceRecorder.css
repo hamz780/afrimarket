@@ -1,0 +1,29 @@
+.voice-button{
+width:42px;
+height:42px;
+border:none;
+border-radius:50%;
+background:#22c55e;
+color:#fff;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:18px;
+transition:.3s;
+}
+
+.voice-button:hover{
+transform:scale(1.08);
+}
+
+.voice-button.recording{
+background:#ef4444;
+animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}

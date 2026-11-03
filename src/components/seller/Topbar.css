@@ -1,0 +1,239 @@
+/* ===========================
+   SELLER TOPBAR
+=========================== */
+
+.seller-topbar{
+
+    height:80px;
+
+    background:#ffffff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 35px;
+
+    border-bottom:1px solid #e5e7eb;
+
+}
+
+/* ===========================
+   LEFT
+=========================== */
+
+.topbar-left h1{
+
+    margin:0;
+
+    font-size:1.8rem;
+
+    color:#111827;
+
+}
+
+.topbar-left p{
+
+    margin-top:6px;
+
+    color:#6b7280;
+
+    font-size:.95rem;
+
+}
+
+/* ===========================
+   RIGHT
+=========================== */
+
+.topbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+/* SEARCH */
+
+.topbar-search{
+
+    width:320px;
+
+    height:46px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:#f3f4f6;
+
+    border-radius:12px;
+
+    padding:0 16px;
+
+}
+
+.topbar-search svg{
+
+    color:#6b7280;
+
+}
+
+.topbar-search input{
+
+    width:100%;
+
+    border:none;
+
+    background:transparent;
+
+    outline:none;
+
+    font-size:.95rem;
+
+}
+
+/* NOTIFICATION */
+
+.notification-btn{
+
+    position:relative;
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    background:#f3f4f6;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.1rem;
+
+    transition:.3s;
+
+}
+
+.notification-btn:hover{
+
+    background:#16a34a;
+
+    color:#fff;
+
+}
+
+.notification-badge{
+
+    position:absolute;
+
+    top:6px;
+
+    right:6px;
+
+    width:18px;
+
+    height:18px;
+
+    background:#ef4444;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:.7rem;
+
+    font-weight:700;
+
+}
+
+/* PROFILE */
+
+.seller-profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.seller-profile svg{
+
+    font-size:2.5rem;
+
+    color:#16a34a;
+
+}
+
+.seller-profile strong{
+
+    display:block;
+
+    color:#111827;
+
+}
+
+.seller-profile small{
+
+    color:#6b7280;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+    .seller-topbar{
+
+        padding:20px;
+
+        flex-direction:column;
+
+        height:auto;
+
+        gap:20px;
+
+        align-items:flex-start;
+
+    }
+
+    .topbar-right{
+
+        width:100%;
+
+        flex-wrap:wrap;
+
+    }
+
+    .topbar-search{
+
+        width:100%;
+
+    }
+
+}

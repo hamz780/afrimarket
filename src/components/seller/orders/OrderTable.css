@@ -1,0 +1,545 @@
+/* =====================================================
+   ORDER TABLE
+   ===================================================== */
+
+.order-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+/* Scrollbar */
+.order-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.order-table-wrapper::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 10px;
+}
+
+.order-table-wrapper::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 10px;
+}
+
+.order-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* =====================================================
+   TABLE
+   ===================================================== */
+
+.order-table {
+  width: 100%;
+  min-width: 1050px;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+/* =====================================================
+   TABLE HEADER
+   ===================================================== */
+
+.order-table thead {
+  background: #f9fafb;
+}
+
+.order-table th {
+  padding: 15px 14px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+
+  font-size: 12px;
+  font-weight: 700;
+  color: #6b7280;
+
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   TABLE BODY
+   ===================================================== */
+
+.order-table td {
+  padding: 16px 14px;
+
+  border-bottom: 1px solid #f3f4f6;
+
+  font-size: 14px;
+  color: #374151;
+
+  vertical-align: middle;
+}
+
+.order-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.order-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.order-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Selected order */
+
+.order-table tbody tr.order-row-selected {
+  background: #fff7ed;
+}
+
+.order-table tbody tr.order-row-selected:hover {
+  background: #ffedd5;
+}
+
+/* =====================================================
+   CHECKBOX
+   ===================================================== */
+
+.checkbox-column {
+  width: 45px;
+  text-align: center !important;
+}
+
+.checkbox-column input {
+  width: 16px;
+  height: 16px;
+
+  cursor: pointer;
+
+  accent-color: #f59e0b;
+}
+
+/* =====================================================
+   ORDER ID
+   ===================================================== */
+
+.order-id {
+  font-weight: 700;
+  color: #111827;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   CUSTOMER
+   ===================================================== */
+
+.customer-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 190px;
+}
+
+.customer-avatar {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f59e0b;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.customer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.customer-info strong {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 700;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.customer-info span {
+  color: #6b7280;
+  font-size: 12px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  max-width: 200px;
+}
+
+/* =====================================================
+   DATE
+   ===================================================== */
+
+.order-date {
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+/* =====================================================
+   TOTAL
+   ===================================================== */
+
+.order-total {
+  color: #111827;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* =====================================================
+   PAYMENT BADGES
+   ===================================================== */
+
+.payment-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.payment-paid {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.payment-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.payment-unpaid {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.payment-refunded {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.payment-failed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* =====================================================
+   STATUS
+   ===================================================== */
+
+.status-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.status-badge svg {
+  font-size: 11px;
+}
+
+/* Pending */
+
+.status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* Processing */
+
+.status-processing {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* Shipped */
+
+.status-shipped {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+/* Delivered */
+
+.status-delivered {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* Cancelled */
+
+.status-cancelled {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Refunded */
+
+.status-refunded {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+/* Default */
+
+.status-default {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+/* =====================================================
+   STATUS SELECT
+   ===================================================== */
+
+.status-control select {
+  min-width: 125px;
+
+  padding: 6px 9px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+
+  background: #ffffff;
+  color: #374151;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.status-control select:hover {
+  border-color: #9ca3af;
+}
+
+.status-control select:focus {
+  border-color: #f59e0b;
+
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.15);
+}
+
+.status-control select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =====================================================
+   ACTIONS
+   ===================================================== */
+
+.order-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.order-action {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    opacity 0.2s ease;
+}
+
+.order-action:hover {
+  transform: translateY(-1px);
+}
+
+.order-action:active {
+  transform: translateY(0);
+}
+
+/* View */
+
+.order-action.view {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.order-action.view:hover {
+  background: #dbeafe;
+}
+
+/* Delete */
+
+.order-action.delete {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.order-action.delete:hover {
+  background: #fee2e2;
+}
+
+.order-action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =====================================================
+   EMPTY STATE
+   ===================================================== */
+
+.order-table-empty {
+  width: 100%;
+
+  padding: 70px 30px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+}
+
+.order-table-empty-icon {
+  margin-bottom: 16px;
+
+  font-size: 42px;
+
+  color: #cbd5e1;
+}
+
+.order-table-empty h3 {
+  margin: 0 0 8px;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #374151;
+}
+
+.order-table-empty p {
+  margin: 0;
+
+  font-size: 14px;
+
+  color: #6b7280;
+}
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+.sr-only {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+
+  clip: rect(0, 0, 0, 0);
+
+  white-space: nowrap;
+
+  border: 0;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 1200px) {
+  .order-table {
+    min-width: 1000px;
+  }
+
+  .order-table th,
+  .order-table td {
+    padding: 13px 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-table-wrapper {
+    border-radius: 8px;
+  }
+
+  .order-table {
+    min-width: 950px;
+  }
+
+  .order-table th {
+    padding: 12px 10px;
+
+    font-size: 11px;
+  }
+
+  .order-table td {
+    padding: 12px 10px;
+
+    font-size: 13px;
+  }
+
+  .customer-avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .customer-cell {
+    min-width: 170px;
+  }
+}

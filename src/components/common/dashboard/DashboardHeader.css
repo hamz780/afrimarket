@@ -1,0 +1,237 @@
+/* ==========================================
+   DASHBOARD HEADER
+========================================== */
+
+.dashboard-header{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px 30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+    margin-bottom:30px;
+
+}
+
+.header-left h1{
+
+    color:#14532d;
+
+    font-size:2rem;
+
+    margin-bottom:6px;
+
+}
+
+.header-left p{
+
+    color:#64748b;
+
+}
+
+.header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.search-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:#f1f5f9;
+
+    padding:12px 18px;
+
+    border-radius:40px;
+
+}
+
+.search-box svg{
+
+    color:#16a34a;
+
+}
+
+.search-box input{
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    width:220px;
+
+    font-size:.95rem;
+
+}
+
+.icon-btn{
+
+    position:relative;
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#f8fafc;
+
+    color:#14532d;
+
+    cursor:pointer;
+
+    font-size:1.1rem;
+
+    transition:.3s;
+
+}
+
+.icon-btn:hover{
+
+    background:#dcfce7;
+
+}
+
+.badge{
+
+    position:absolute;
+
+    top:-3px;
+
+    right:-3px;
+
+    background:#ef4444;
+
+    color:white;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    font-size:10px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.user-profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.user-profile img{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.user-profile h4{
+
+    color:#111827;
+
+    margin-bottom:4px;
+
+}
+
+.user-profile span{
+
+    color:#64748b;
+
+    font-size:.9rem;
+
+}
+
+@media(max-width:992px){
+
+.dashboard-header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:20px;
+
+}
+
+.header-right{
+
+width:100%;
+
+flex-wrap:wrap;
+
+}
+
+.search-box{
+
+flex:1;
+
+}
+
+.search-box input{
+
+width:100%;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.dashboard-header{
+
+padding:20px;
+
+}
+
+.header-left h1{
+
+font-size:1.6rem;
+
+}
+
+.user-profile{
+
+width:100%;
+
+}
+
+}

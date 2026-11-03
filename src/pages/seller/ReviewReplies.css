@@ -1,0 +1,80 @@
+.reply-page{
+padding:24px;
+display:flex;
+flex-direction:column;
+gap:24px;
+}
+
+.reply-card{
+background:var(--bg-white);
+padding:24px;
+border-radius:16px;
+border:1px solid var(--border-medium);
+}
+
+.reply-review-text{
+margin-top:20px;
+line-height:1.8;
+color:var(--text-secondary);
+}
+
+.reply-form{
+display:flex;
+flex-direction:column;
+gap:16px;
+background:var(--bg-white);
+padding:24px;
+border-radius:16px;
+border:1px solid var(--border-medium);
+}
+
+.reply-form textarea{
+width:100%;
+padding:16px;
+border-radius:12px;
+border:1px solid var(--border-medium);
+resize:vertical;
+font-family:inherit;
+font-size:.95rem;
+outline:none;
+}
+
+.reply-form textarea:focus{
+border-color:var(--primary-color);
+}
+
+.reply-form button{
+align-self:flex-start;
+display:flex;
+align-items:center;
+gap:10px;
+padding:12px 20px;
+border:none;
+border-radius:10px;
+background:var(--primary-color);
+color:white;
+cursor:pointer;
+transition:.3s;
+}
+
+.reply-form button:hover{
+background:var(--primary-hover);
+}
+
+.reply-not-found{
+padding:80px;
+text-align:center;
+}
+
+@media(max-width:768px){
+
+.reply-page{
+padding:16px;
+}
+
+.reply-form button{
+width:100%;
+justify-content:center;
+}
+
+}

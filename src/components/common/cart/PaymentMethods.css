@@ -1,0 +1,185 @@
+/* ==========================================
+   PAYMENT METHODS
+========================================== */
+
+.payment-methods{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.payment-methods h3{
+
+    color:#14532d;
+
+    font-size:1.3rem;
+
+    margin-bottom:25px;
+
+    font-weight:700;
+
+}
+
+/* Grid */
+
+.payment-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+/* Card */
+
+.payment-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:#f8fafc;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+    border:2px solid transparent;
+
+}
+
+.payment-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#16a34a;
+
+    box-shadow:0 12px 25px rgba(22,163,74,.12);
+
+}
+
+.payment-card svg{
+
+    font-size:2.2rem;
+
+}
+
+.payment-card span{
+
+    font-weight:600;
+
+    color:#374151;
+
+}
+
+/* Individual Colors */
+
+.visa svg{
+    color:#1A1F71;
+}
+
+.mastercard svg{
+    color:#EB001B;
+}
+
+.momo svg{
+    color:#F9C600;
+}
+
+.airtel svg{
+    color:#E60000;
+}
+
+.mpesa svg{
+    color:#16a34a;
+}
+
+.bank svg{
+    color:#2563eb;
+}
+
+.bitcoin svg{
+    color:#F7931A;
+}
+
+.usdt{
+    font-size:1.8rem;
+}
+
+/* Security */
+
+.payment-security{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:25px;
+
+    background:#f0fdf4;
+
+    border-radius:14px;
+
+    padding:15px;
+
+}
+
+.payment-security svg{
+
+    color:#16a34a;
+
+    font-size:1.3rem;
+
+}
+
+.payment-security span{
+
+    color:#166534;
+
+    font-size:.9rem;
+
+    line-height:1.5;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.payment-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.payment-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}

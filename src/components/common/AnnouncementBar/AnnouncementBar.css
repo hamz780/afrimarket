@@ -1,0 +1,48 @@
+.announcement-bar{
+    background:#1B5E20;
+    color:white;
+
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 35px;
+
+    font-size:14px;
+    font-weight:500;
+}
+
+.announcement-left{
+    font-weight:700;
+}
+
+.announcement-center{
+    opacity:.95;
+}
+
+.announcement-right{
+    opacity:.85;
+}
+
+@media(max-width:900px){
+
+.announcement-center{
+    display:none;
+}
+
+.announcement-bar{
+    justify-content:space-between;
+    padding:0 20px;
+}
+
+}
+
+@media(max-width:600px){
+
+.announcement-right{
+    display:none;
+}
+
+}

@@ -1,0 +1,413 @@
+/* ==========================================
+   AFRIMARKET SELLER DASHBOARD
+========================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.seller-dashboard {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f7f9;
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   SELLER SIDEBAR
+========================================== */
+
+.seller-sidebar,
+.sidebar,
+aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 280px;
+  height: 100vh;
+
+  background: #ffffff;
+
+  z-index: 1000;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border-right: 1px solid #e5e7eb;
+}
+
+/* Sidebar inner content */
+
+.seller-sidebar > *,
+.sidebar > *,
+aside > * {
+  max-width: 100%;
+}
+
+/* ==========================================
+   SIDEBAR NAVIGATION
+========================================== */
+
+.seller-sidebar nav,
+.sidebar nav,
+aside nav,
+.sidebar-menu,
+.seller-sidebar .sidebar-menu,
+.seller-sidebar .nav-menu {
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  align-items: stretch !important;
+
+  justify-content: flex-start !important;
+
+  gap: 8px !important;
+
+  width: 100%;
+
+  padding: 20px 16px;
+
+  margin: 0;
+
+  visibility: visible !important;
+}
+
+/* ==========================================
+   NAVIGATION BUTTONS / LINKS
+========================================== */
+
+.seller-sidebar nav a,
+.sidebar nav a,
+aside nav a,
+.seller-sidebar button,
+.sidebar button,
+.seller-sidebar .nav-item,
+.sidebar .nav-item,
+.seller-sidebar .menu-item,
+.sidebar .menu-item {
+  display: flex !important;
+
+  align-items: center !important;
+
+  width: 100% !important;
+
+  min-height: 52px;
+
+  padding: 14px 18px !important;
+
+  margin: 0 !important;
+
+  gap: 14px;
+
+  color: #1f2937 !important;
+
+  background: transparent;
+
+  text-decoration: none;
+
+  border: none;
+
+  border-radius: 14px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  visibility: visible !important;
+
+  opacity: 1 !important;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Icons */
+
+.seller-sidebar nav svg,
+.sidebar nav svg,
+aside nav svg,
+.seller-sidebar .nav-item svg,
+.sidebar .nav-item svg,
+.seller-sidebar button svg,
+.sidebar button svg {
+  display: inline-flex !important;
+
+  flex-shrink: 0;
+
+  width: 20px;
+
+  height: 20px;
+
+  color: #1f2937;
+
+  visibility: visible !important;
+
+  opacity: 1 !important;
+}
+
+/* Hover */
+
+.seller-sidebar nav a:hover,
+.sidebar nav a:hover,
+aside nav a:hover,
+.seller-sidebar .nav-item:hover,
+.sidebar .nav-item:hover,
+.seller-sidebar button:hover,
+.sidebar button:hover {
+  background: #f0fdf4;
+
+  color: #16a34a !important;
+
+  transform: translateX(2px);
+}
+
+/* Active */
+
+.seller-sidebar nav a.active,
+.sidebar nav a.active,
+aside nav a.active,
+.seller-sidebar .nav-item.active,
+.sidebar .nav-item.active,
+.seller-sidebar button.active,
+.sidebar button.active {
+  background: #22c55e !important;
+
+  color: #ffffff !important;
+
+  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.25);
+}
+
+.seller-sidebar nav a.active svg,
+.sidebar nav a.active svg,
+aside nav a.active svg,
+.seller-sidebar .nav-item.active svg,
+.sidebar .nav-item.active svg {
+  color: #ffffff !important;
+}
+
+/* ==========================================
+   LOGOUT
+========================================== */
+
+.seller-sidebar .logout,
+.sidebar .logout,
+.seller-sidebar .logout-btn,
+.sidebar .logout-btn {
+  color: #dc2626 !important;
+}
+
+.seller-sidebar .logout svg,
+.sidebar .logout svg,
+.seller-sidebar .logout-btn svg,
+.sidebar .logout-btn svg {
+  color: #dc2626 !important;
+}
+
+.seller-sidebar .logout:hover,
+.sidebar .logout:hover,
+.seller-sidebar .logout-btn:hover,
+.sidebar .logout-btn:hover {
+  background: #fef2f2 !important;
+
+  color: #dc2626 !important;
+}
+
+/* ==========================================
+   MAIN SELLER CONTENT
+========================================== */
+
+.seller-main {
+  margin-left: 280px;
+
+  width: calc(100% - 280px);
+
+  min-width: 0;
+
+  min-height: 100vh;
+
+  background: #f5f7f9;
+
+  overflow-x: hidden;
+}
+
+.seller-content {
+  width: 100%;
+
+  max-width: 100%;
+
+  min-width: 0;
+
+  padding: 28px;
+
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   DASHBOARD CHILDREN
+========================================== */
+
+.seller-content > * {
+  width: 100%;
+
+  max-width: 100%;
+
+  min-width: 0;
+}
+
+/* Prevent cards/forms from expanding page */
+
+.seller-content section,
+.seller-content .card,
+.seller-content .dashboard-card,
+.seller-content .product-form,
+.seller-content .product-container {
+  max-width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   FORMS
+========================================== */
+
+.seller-content input,
+.seller-content select,
+.seller-content textarea {
+  width: 100%;
+
+  max-width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   TABLES
+========================================== */
+
+.seller-content table {
+  width: 100%;
+
+  max-width: 100%;
+
+  border-collapse: collapse;
+}
+
+.seller-content .table-container {
+  width: 100%;
+
+  max-width: 100%;
+
+  overflow-x: auto;
+}
+
+/* ==========================================
+   IMAGES
+========================================== */
+
+.seller-content img {
+  max-width: 100%;
+
+  height: auto;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1100px) {
+  .seller-sidebar,
+  .sidebar,
+  aside {
+    width: 250px;
+  }
+
+  .seller-main {
+    margin-left: 250px;
+
+    width: calc(100% - 250px);
+  }
+
+  .seller-content {
+    padding: 22px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+  .seller-sidebar,
+  .sidebar,
+  aside {
+    width: 230px;
+  }
+
+  .seller-main {
+    margin-left: 0;
+
+    width: 100%;
+  }
+
+  .seller-content {
+    padding: 16px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 500px) {
+  .seller-sidebar,
+  .sidebar,
+  aside {
+    width: 220px;
+  }
+
+  .seller-sidebar nav a,
+  .sidebar nav a,
+  aside nav a,
+  .seller-sidebar .nav-item,
+  .sidebar .nav-item {
+    min-height: 48px;
+
+    padding: 12px 14px !important;
+
+    font-size: 14px;
+  }
+
+  .seller-main {
+    width: 100%;
+  }
+
+  .seller-content {
+    padding: 12px;
+  }
+}

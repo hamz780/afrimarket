@@ -1,0 +1,84 @@
+/* ==========================
+   HEADER
+========================== */
+
+.header{
+    width:100%;
+}
+
+/* ==========================
+   TOP BAR
+========================== */
+
+.topbar{
+
+    background:#044d37;
+
+    color:white;
+
+    font-size:14px;
+
+}
+
+.topbar-container{
+
+    width:92%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    height:40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.topbar-left,
+.topbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+.topbar span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.topbar a{
+
+    color:white;
+
+    text-decoration:none;
+
+}
+
+.topbar a:hover{
+
+    color:#FFD700;
+
+}
+
+@media(max-width:768px){
+
+.topbar{
+
+display:none;
+
+}
+
+}
