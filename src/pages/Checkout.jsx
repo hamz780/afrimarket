@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
@@ -16,7 +15,6 @@ const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 export default function Checkout() {
   const navigate = useNavigate();
-
   const { cartItems, cartTotal, clearCart } = useCart();
 
   const [shippingAddress, setShippingAddress] = useState({
@@ -39,12 +37,12 @@ export default function Checkout() {
 
   const [paymentMethod, setPaymentMethod] = useState("cod");
   const [transactionId, setTransactionId] = useState("");
-
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [orderPlaced, setOrderPlaced] = useState(false);
 
   const handlePlaceOrder = async () => {
-    if (loading || cartItems.length === 0) return;
+    if (loading || orderPlaced || cartItems.length === 0) return;
 
     setError("");
 
@@ -94,7 +92,6 @@ export default function Checkout() {
 
     const orderData = {
       items: orderItems,
-
       shippingAddress: {
         fullName: shippingAddress.fullName.trim(),
         phone: shippingAddress.phone.trim(),
@@ -105,10 +102,8 @@ export default function Checkout() {
         postalCode: shippingAddress.postalCode.trim(),
         deliveryNotes: shippingAddress.deliveryNotes.trim(),
       },
-
       deliveryOption: delivery.id,
       deliveryFee: delivery.price,
-
       paymentMethod,
       transactionId: transactionId.trim(),
     };
@@ -131,7 +126,8 @@ export default function Checkout() {
         throw new Error(data.message || "Unable to place your order.");
       }
 
-      // Clear the cart only after the backend confirms order creation.
+      // Hide the summary only after successful order creation.
+      setOrderPlaced(true);
       clearCart();
 
       navigate("/order-success", {
@@ -147,7 +143,7 @@ export default function Checkout() {
     }
   };
 
-  if (cartItems.length === 0) {
+  if (orderPlaced || cartItems.length === 0) {
     return (
       <section className="checkout-page">
         <div className="checkout-empty">
@@ -169,9 +165,7 @@ export default function Checkout() {
 
       <div className="checkout-layout">
         <div className="checkout-left">
-          <ShippingAddress
-            onAddressChange={setShippingAddress}
-          />
+          <ShippingAddress onAddressChange={setShippingAddress} />
 
           <DeliveryOptions
             value={delivery.id}
@@ -204,11 +198,13 @@ export default function Checkout() {
             </div>
           )}
 
-          <OrderSummary
-            cartItems={cartItems}
-            cartTotal={cartTotal}
-            onPlaceOrder={handlePlaceOrder}
-          />
+          {!orderPlaced && (
+            <OrderSummary
+              cartItems={cartItems}
+              cartTotal={cartTotal}
+              onPlaceOrder={handlePlaceOrder}
+            />
+          )}
 
           {loading && (
             <p style={{ textAlign: "center", marginTop: "12px" }}>
