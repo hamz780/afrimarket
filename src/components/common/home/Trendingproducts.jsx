@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
+
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import ProductCard from "../ProductCard/ProductCard";
@@ -6,79 +7,65 @@ import { useProducts } from "../../../context/ProductContext";
 import { useCart } from "../../../context/CartContext";
 
 import {
-  FaFire,
+  FaTrophy,
   FaShoppingCart,
   FaCheck,
   FaStar,
   FaShieldAlt,
   FaArrowRight,
-  FaEye,
-  FaChartLine,
+  FaChevronLeft,
+  FaChevronRight,
   FaBoxOpen,
 } from "react-icons/fa";
 
-import "./TrendingProducts.css";
+import "./Bestsellers.css";
 
-export default function TrendingProducts() {
+export default function BestSellers() {
   const navigate = useNavigate();
 
   const { products = [] } = useProducts();
   const { addToCart } = useCart();
 
   const [addedProductId, setAddedProductId] = useState(null);
+  const [current, setCurrent] = useState(0);
 
-  /* =====================================================
-     TRENDING PRODUCTS
-  ===================================================== */
-
-  const trendingProducts = products.filter(
-    (product) => product.trending === true
+  const bestProducts = products.filter(
+    (product) => product.bestSeller === true
   );
-
-  /* =====================================================
-     PRODUCT ID
-  ===================================================== */
 
   const getProductId = (product) => {
     return product.id || product._id;
   };
 
-  /* =====================================================
-     STABLE TRENDING ACTIVITY
-     
-     This prevents Math.random() from changing the numbers
-     every time the component re-renders.
-  ===================================================== */
+  useEffect(() => {
+    if (bestProducts.length <= 1) return;
 
-  const activityData = useMemo(() => {
-    const data = {};
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % bestProducts.length);
+    }, 5000);
 
-    trendingProducts.forEach((product, index) => {
-      const id = getProductId(product);
+    return () => clearInterval(timer);
+  }, [bestProducts.length]);
 
-      if (!id) return;
+  const nextSlide = () => {
+    if (bestProducts.length === 0) return;
 
-      data[id] = {
-        viewers: 45 + ((index * 73 + 31) % 455),
-        soldToday: 20 + ((index * 29 + 17) % 100),
-      };
-    });
+    setCurrent((prev) => (prev + 1) % bestProducts.length);
+  };
 
-    return data;
-  }, [trendingProducts]);
+  const prevSlide = () => {
+    if (bestProducts.length === 0) return;
 
-  /* =====================================================
-     ADD TO CART
-  ===================================================== */
+    setCurrent((prev) =>
+      prev === 0 ? bestProducts.length - 1 : prev - 1
+    );
+  };
 
   const handleAddToCart = (product) => {
     const productId = getProductId(product);
 
     if (!productId) {
-      console.error(
-        "Trending product is missing an ID:",
-        product
-      );
+      console.error("Best Seller product is missing an ID:", product);
       return;
     }
 
@@ -91,19 +78,12 @@ export default function TrendingProducts() {
 
     if (stock <= 0) return;
 
-    /*
-      CartContext uses item.id.
-      MongoDB products may use _id.
-      Normalize the ID before adding.
-    */
-
     const cartProduct = {
       ...product,
       id: productId,
     };
 
     addToCart(cartProduct, 1);
-
     setAddedProductId(productId);
 
     setTimeout(() => {
@@ -111,17 +91,9 @@ export default function TrendingProducts() {
     }, 1800);
   };
 
-  /* =====================================================
-     VIEW ALL
-  ===================================================== */
-
   const handleViewAll = () => {
     navigate("/products");
   };
-
-  /* =====================================================
-     STOCK
-  ===================================================== */
 
   const getStock = (product) => {
     const stock = Number(
@@ -140,395 +112,230 @@ export default function TrendingProducts() {
     if (stock <= 0) {
       return {
         label: "Sold Out",
-        className: "trend-stock-soldout",
+        className: "stock-soldout",
       };
     }
 
     if (stock <= 5) {
       return {
         label: `Only ${stock} left`,
-        className: "trend-stock-low",
+        className: "stock-low",
       };
     }
 
     return {
       label: "In Stock",
-      className: "trend-stock-good",
+      className: "stock-good",
     };
   };
 
-  /* =====================================================
-     AUTO REFRESH / LIVE FEEL
-  ===================================================== */
-
-  const [livePulse, setLivePulse] = useState(true);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setLivePulse((prev) => !prev);
-    }, 2500);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  /* =====================================================
-     RENDER
-  ===================================================== */
-
   return (
-    <section className="trending-section">
+    <section className="best-sellers">
+      <div className="best-glow best-glow-one" />
+      <div className="best-glow best-glow-two" />
 
-      {/* =================================================
-          DECORATIVE BACKGROUND
-      ================================================= */}
-
-      <div className="trending-glow trending-glow-one" />
-      <div className="trending-glow trending-glow-two" />
-
-      <div className="trending-container">
-
-        {/* =================================================
-            HEADER
-        ================================================= */}
-
-        <div className="trending-header">
-
-          <div className="trending-header-content">
-
-            <span className="trending-tag">
-              <FaFire />
-              TRENDING NOW
+      <div className="best-container">
+        <div className="best-header">
+          <div className="best-header-content">
+            <span className="best-tag">
+              <FaTrophy />
+              BEST SELLERS
             </span>
 
-            <h2>
-              Trending Across Africa
-            </h2>
+            <h2>Africa's Most Loved Products</h2>
 
             <p>
-              Discover the products shoppers are loving,
-              sharing, and buying right now across Africa
-              and beyond.
+              Discover the products customers across Africa
+              and around the world are buying again and again.
             </p>
 
-            {/* Trust Indicators */}
-
-            <div className="trending-trust">
-
-              <div className="trending-trust-item">
-                <FaChartLine />
-                <span>Popular Right Now</span>
-              </div>
-
-              <div className="trending-trust-item">
+            <div className="best-trust">
+              <div className="best-trust-item">
                 <FaShieldAlt />
                 <span>Verified Sellers</span>
               </div>
 
-              <div className="trending-trust-item">
+              <div className="best-trust-item">
                 <FaStar />
                 <span>Top Rated</span>
               </div>
 
+              <div className="best-trust-item">
+                <FaShoppingCart />
+                <span>Customer Favorites</span>
+              </div>
             </div>
-
           </div>
 
-          {/* Live Indicator */}
+          {bestProducts.length > 1 && (
+            <div className="best-controls">
+              <button
+                type="button"
+                onClick={prevSlide}
+                aria-label="Previous best seller"
+                className="best-control-btn"
+              >
+                <FaChevronLeft />
+              </button>
 
-          <div className="trending-live">
-
-            <span
-              className={`live-dot ${
-                livePulse ? "live-active" : ""
-              }`}
-            />
-
-            <div>
-              <strong>Live Marketplace</strong>
-              <span>Updated in real time</span>
+              <button
+                type="button"
+                onClick={nextSlide}
+                aria-label="Next best seller"
+                className="best-control-btn"
+              >
+                <FaChevronRight />
+              </button>
             </div>
-
-          </div>
-
+          )}
         </div>
 
-        {/* =================================================
-            PRODUCT GRID
-        ================================================= */}
+        {bestProducts.length > 0 ? (
+          <>
+            <div className="best-carousel">
+              {bestProducts.map((product, index) => {
+                const productId = getProductId(product);
+                const stockStatus = getStockStatus(product);
+                const stock = getStock(product);
+                const isAdded = addedProductId === productId;
 
-        {trendingProducts.length > 0 ? (
-
-          <div className="trending-grid">
-
-            {trendingProducts.map((product, index) => {
-
-              const productId = getProductId(product);
-
-              const activity =
-                activityData[productId] || {
-                  viewers: 80,
-                  soldToday: 25,
-                };
-
-              const stock = getStock(product);
-
-              const stockStatus =
-                getStockStatus(product);
-
-              const isAdded =
-                addedProductId === productId;
-
-              return (
-
-                <div
-                  className="trending-card"
-                  key={productId}
-                >
-
-                  {/* =================================================
-                      TRENDING BADGE
-                  ================================================= */}
-
-                  <div className="trending-badge">
-
-                    <FaFire />
-
-                    <span>
-                      Trending
-                    </span>
-
-                  </div>
-
-                  {/* Ranking */}
-
-                  <div className="trending-rank">
-                    #{index + 1}
-                  </div>
-
-                  {/* Discount */}
-
-                  {product.discount > 0 && (
-                    <div className="trending-discount">
-                      -{product.discount}%
-                    </div>
-                  )}
-
-                  {/* Product */}
-
-                  <div className="trending-product">
-                    <ProductCard product={product} />
-                  </div>
-
-                  {/* =================================================
-                      PRODUCT FOOTER
-                  ================================================= */}
-
-                  <div className="trending-footer">
-
-                    {/* Live Activity */}
-
-                    <div className="trending-activity">
-
-                      <div className="live-view">
-
-                        <FaEye />
-
-                        <span>
-                          {activity.viewers}
-                        </span>
-
-                        <small>
-                          people viewing
-                        </small>
-
-                      </div>
-
-                      <div className="sold">
-
-                        <FaCheck />
-
-                        <span>
-                          {activity.soldToday}
-                        </span>
-
-                        <small>
-                          sold today
-                        </small>
-
-                      </div>
-
+                return (
+                  <div
+                    key={productId}
+                    className={`best-card ${
+                      index === current ? "active" : ""
+                    }`}
+                  >
+                    <div className="best-ribbon">
+                      <FaTrophy />
+                      <span>#{index + 1} BEST SELLER</span>
                     </div>
 
-                    {/* Rating */}
-
-                    <div className="trending-rating">
-
-                      <div className="trending-rating-stars">
-
-                        <FaStar />
-
-                        <strong>
-                          {product.rating || 4.8}
-                        </strong>
-
+                    {product.discount > 0 && (
+                      <div className="best-discount">
+                        -{product.discount}%
                       </div>
+                    )}
 
-                      <span>
-                        {product.reviews || 0} reviews
-                      </span>
-
+                    <div className="best-product">
+                      <ProductCard product={product} />
                     </div>
 
-                    {/* Seller */}
+                    <div className="best-extra">
+                      <div className="best-rating">
+                        <div className="best-rating-main">
+                          <FaStar />
+                          <strong>{product.rating || 4.9}</strong>
+                          <span>
+                            ({product.reviews || 0} reviews)
+                          </span>
+                        </div>
+                      </div>
 
-                    <div className="trending-seller">
-
-                      <div className="trending-verified">
-
-                        <span className="verified-icon">
+                      <div className="best-seller-info">
+                        <div className="best-seller-verified">
                           <FaCheck />
-                        </span>
+                          <span>Verified Seller</span>
+                        </div>
 
-                        <span>
-                          Verified Seller
-                        </span>
-
+                        <div
+                          className={`best-stock ${stockStatus.className}`}
+                        >
+                          {stock > 0 && <FaBoxOpen />}
+                          <span>{stockStatus.label}</span>
+                        </div>
                       </div>
 
-                      <div
-                        className={`trending-stock ${stockStatus.className}`}
+                      <button
+                        type="button"
+                        className={`best-btn ${
+                          isAdded ? "best-btn-added" : ""
+                        }`}
+                        onClick={() => handleAddToCart(product)}
+                        disabled={stock <= 0}
                       >
-                        {stock > 0 && <FaBoxOpen />}
-
-                        <span>
-                          {stockStatus.label}
-                        </span>
-
-                      </div>
-
+                        {isAdded ? (
+                          <>
+                            <FaCheck />
+                            Added to Cart
+                          </>
+                        ) : stock <= 0 ? (
+                          <>
+                            <FaBoxOpen />
+                            Sold Out
+                          </>
+                        ) : (
+                          <>
+                            <FaShoppingCart />
+                            Add to Cart
+                            <FaArrowRight className="best-btn-arrow" />
+                          </>
+                        )}
+                      </button>
                     </div>
-
-                    {/* Add To Cart */}
-
-                    <button
-                      type="button"
-                      className={`trending-btn ${
-                        isAdded
-                          ? "trending-btn-added"
-                          : ""
-                      }`}
-                      onClick={() =>
-                        handleAddToCart(product)
-                      }
-                      disabled={stock <= 0}
-                    >
-
-                      {isAdded ? (
-                        <>
-                          <FaCheck />
-                          Added to Cart
-                        </>
-                      ) : stock <= 0 ? (
-                        <>
-                          <FaBoxOpen />
-                          Sold Out
-                        </>
-                      ) : (
-                        <>
-                          <FaShoppingCart />
-                          Add to Cart
-
-                          <FaArrowRight className="trending-btn-arrow" />
-                        </>
-                      )}
-
-                    </button>
-
                   </div>
-
-                </div>
-
-              );
-            })}
-
-          </div>
-
-        ) : (
-
-          /* =================================================
-             EMPTY STATE
-          ================================================= */
-
-          <div className="no-products">
-
-            <div className="empty-trending-icon">
-              <FaFire />
+                );
+              })}
             </div>
 
-            <h3>
-              No Trending Products Yet
-            </h3>
+            {bestProducts.length > 1 && (
+              <div className="best-dots">
+                {bestProducts.map((product, index) => (
+                  <button
+                    type="button"
+                    key={getProductId(product) || index}
+                    className={`best-dot ${
+                      current === index ? "active-dot" : ""
+                    }`}
+                    onClick={() => setCurrent(index)}
+                    aria-label={`Go to best seller ${index + 1}`}
+                  />
+                ))}
+              </div>
+            )}
+
+            <div className="best-footer">
+              <div className="best-footer-message">
+                <FaTrophy />
+                <span>
+                  Trusted by customers across Africa and worldwide
+                </span>
+              </div>
+
+              <button
+                type="button"
+                className="best-view-all"
+                onClick={handleViewAll}
+              >
+                Explore All Products
+                <FaArrowRight />
+              </button>
+            </div>
+          </>
+        ) : (
+          <div className="no-products">
+            <div className="empty-best-icon">
+              <FaTrophy />
+            </div>
+
+            <h3>No Best Sellers Yet</h3>
 
             <p>
-              Popular products will appear here as shoppers
-              discover what's hot on AfriMarket.
+              Our best-selling products will appear here
+              as customers discover their favorites.
             </p>
 
             <button
               type="button"
-              className="trending-view-all"
+              className="best-view-all"
               onClick={handleViewAll}
             >
               Explore Marketplace
               <FaArrowRight />
             </button>
-
           </div>
-
         )}
-
-        {/* =================================================
-            FOOTER
-        ================================================= */}
-
-        {trendingProducts.length > 0 && (
-
-          <div className="trending-bottom">
-
-            <div className="trending-bottom-message">
-
-              <span className="bottom-fire">
-                <FaFire />
-              </span>
-
-              <div>
-                <strong>
-                  What's hot right now
-                </strong>
-
-                <span>
-                  Explore more products from Africa's
-                  fastest-growing marketplace.
-                </span>
-              </div>
-
-            </div>
-
-            <button
-              type="button"
-              className="trending-view-all"
-              onClick={handleViewAll}
-            >
-              Explore All Products
-              <FaArrowRight />
-            </button>
-
-          </div>
-
-        )}
-
       </div>
-
     </section>
   );
 }
