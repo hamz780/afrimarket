@@ -1,3 +1,4 @@
+
 /* ==========================================
    AFRIMARKET CHECKOUT PAGE
 ========================================== */
@@ -8,12 +9,10 @@
   background: #f8fafc;
   padding: 50px 5%;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
-/* ==========================================
-   HEADER
-========================================== */
+/* HEADER */
 
 .checkout-header {
   width: 100%;
@@ -37,77 +36,53 @@
   line-height: 1.7;
 }
 
-/* ==========================================
-   MAIN CHECKOUT LAYOUT
-========================================== */
+/* MAIN LAYOUT */
 
 .checkout-layout {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-
   display: grid;
-
-  /* SUMMARY LEFT / FORM RIGHT */
   grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
-
   gap: 30px;
-
   align-items: start;
   box-sizing: border-box;
 }
 
-/* ==========================================
-   ORDER SUMMARY
-========================================== */
+/* ORDER SUMMARY - DESKTOP */
 
 .checkout-right {
   grid-column: 1;
   grid-row: 1;
-
   width: 100%;
   min-width: 0;
-
   display: flex;
   flex-direction: column;
   gap: 25px;
-
   position: sticky;
   top: 25px;
-
   box-sizing: border-box;
-
   background: #ffffff;
   border-radius: 22px;
-
   padding: 28px;
-
   box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
-
   overflow: hidden;
 }
 
-/* ==========================================
-   CHECKOUT FORM
-========================================== */
+/* CHECKOUT FORM - DESKTOP */
 
 .checkout-left {
   grid-column: 2;
   grid-row: 1;
-
   width: 100%;
   min-width: 0;
-
   display: flex;
   flex-direction: column;
   gap: 25px;
-
   box-sizing: border-box;
 }
 
-/* ==========================================
-   FORM CONTAINERS
-========================================== */
+/* FORM CONTAINERS */
 
 .checkout-left > section,
 .checkout-left > div {
@@ -115,8 +90,6 @@
   min-width: 0;
   box-sizing: border-box;
 }
-
-/* Prevent inputs from escaping the form */
 
 .checkout-left input,
 .checkout-left select,
@@ -127,50 +100,29 @@
   box-sizing: border-box;
 }
 
-/* ==========================================
-   FORM GRID
-========================================== */
-
 .checkout-left .form-grid {
   width: 100%;
-
   display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
-
   box-sizing: border-box;
 }
-
-/* Full width form fields */
 
 .checkout-left .full-width {
   grid-column: 1 / -1;
 }
 
-/* ==========================================
-   EMPTY CART
-========================================== */
+/* EMPTY CART */
 
 .checkout-empty {
   width: 100%;
   max-width: 650px;
-
   margin: 100px auto;
-
   padding: 60px;
-
   background: #ffffff;
-
   border-radius: 25px;
-
   text-align: center;
-
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.08);
-
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
   box-sizing: border-box;
 }
 
@@ -185,9 +137,7 @@
   line-height: 1.7;
 }
 
-/* ==========================================
-   CHECKOUT BUTTONS
-========================================== */
+/* BUTTONS */
 
 .checkout-left button {
   cursor: pointer;
@@ -198,9 +148,7 @@
   transform: translateY(-2px);
 }
 
-/* ==========================================
-   ORDER SUMMARY TYPOGRAPHY
-========================================== */
+/* SUMMARY TYPOGRAPHY */
 
 .checkout-right h2,
 .checkout-right h3 {
@@ -211,9 +159,7 @@
   color: #64748b;
 }
 
-/* ==========================================
-   PREVENT OVERFLOW
-========================================== */
+/* GLOBAL BOX SIZING */
 
 .checkout-page *,
 .checkout-layout *,
@@ -222,9 +168,7 @@
   box-sizing: border-box;
 }
 
-/* ==========================================
-   LARGE TABLETS
-========================================== */
+/* LARGE TABLETS */
 
 @media (max-width: 1100px) {
   .checkout-page {
@@ -232,10 +176,7 @@
   }
 
   .checkout-layout {
-    grid-template-columns:
-      minmax(250px, 320px)
-      minmax(0, 1fr);
-
+    grid-template-columns: minmax(250px, 320px) minmax(0, 1fr);
     gap: 22px;
   }
 
@@ -244,38 +185,51 @@
   }
 }
 
-/* ==========================================
-   TABLETS / MOBILE
-========================================== */
+/* TABLETS AND MOBILE */
 
 @media (max-width: 850px) {
   .checkout-layout {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     gap: 25px;
   }
 
-  .checkout-right,
-  .checkout-left {
+  .checkout-left,
+  .checkout-right {
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     grid-column: auto;
     grid-row: auto;
+    position: static !important;
+    inset: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    float: none !important;
   }
 
-  .checkout-right {
-    position: relative;
-    top: auto;
+  /* PAYMENT FORM FIRST */
+
+  .checkout-left {
     order: 1;
   }
 
-  .checkout-left {
+  /* SUMMARY BELOW PAYMENT FORM */
+
+  .checkout-right {
     order: 2;
+    padding: 22px;
+    height: auto;
+    max-height: none;
+    overflow: visible;
   }
 }
 
-/* ==========================================
-   MOBILE FORM
-========================================== */
+/* MOBILE */
 
 @media (max-width: 768px) {
   .checkout-page {
@@ -301,15 +255,9 @@
   .checkout-left .full-width {
     grid-column: auto;
   }
-
-  .checkout-right {
-    padding: 22px;
-  }
 }
 
-/* ==========================================
-   SMALL PHONES
-========================================== */
+/* SMALL PHONES */
 
 @media (max-width: 480px) {
   .checkout-page {
@@ -332,5 +280,10 @@
   .checkout-right {
     padding: 18px;
     border-radius: 18px;
+  }
+
+  .checkout-left,
+  .checkout-right {
+    flex: 0 0 auto;
   }
 }
