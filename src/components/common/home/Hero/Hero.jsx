@@ -1,5 +1,9 @@
+
 import { useEffect, useState } from "react";
 import "./HeroBanner.css";
+
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 const slides = [
   {
@@ -42,11 +46,6 @@ const slides = [
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
-
-  // ==============================
-  // AI CHAT STATE
-  // ==============================
-
   const [showAI, setShowAI] = useState(false);
 
   const [messages, setMessages] = useState([
@@ -60,10 +59,7 @@ export default function Hero() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // ==============================
   // HERO SLIDER
-  // ==============================
-
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
@@ -74,10 +70,7 @@ export default function Hero() {
 
   const slide = slides[current];
 
-  // ==============================
   // SEND AI MESSAGE
-  // ==============================
-
   const sendMessage = async () => {
     const message = input.trim();
 
@@ -96,14 +89,12 @@ export default function Hero() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/ai/chat",
+        `${API_BASE_URL}/api/ai/chat`,
         {
           method: "POST",
-
           headers: {
             "Content-Type": "application/json",
           },
-
           body: JSON.stringify({
             message,
           }),
@@ -133,7 +124,7 @@ export default function Hero() {
         {
           role: "assistant",
           text:
-            "I'm sorry, I couldn't connect to AfriMarket AI right now. Please make sure the AfriMarket backend is running.",
+            "I'm sorry, I couldn't connect to AfriMarket AI right now. Please try again shortly.",
         },
       ]);
     } finally {
@@ -141,10 +132,7 @@ export default function Hero() {
     }
   };
 
-  // ==============================
   // ENTER KEY
-  // ==============================
-
   const handleKeyDown = (event) => {
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
@@ -154,37 +142,26 @@ export default function Hero() {
 
   return (
     <section className="hero-banner">
-
-      {/* Decorative background elements */}
+      {/* DECORATIVE BACKGROUND */}
 
       <div className="hero-glow hero-glow-one"></div>
-
       <div className="hero-glow hero-glow-two"></div>
-
       <div className="hero-pattern"></div>
 
-      {/* ==========================================
-          HERO CONTENT
-      ========================================== */}
+      {/* HERO CONTENT */}
 
       <div className="hero-content">
-
         {/* LEFT SIDE */}
 
         <div className="hero-copy">
-
           <div className="hero-eyebrow">
             <span className="eyebrow-line"></span>
-
             {slide.eyebrow}
           </div>
 
           <h1>
             {slide.title}
-
-            <span>
-              {slide.highlight}
-            </span>
+            <span>{slide.highlight}</span>
           </h1>
 
           <p className="hero-description">
@@ -192,257 +169,133 @@ export default function Hero() {
           </p>
 
           <div className="hero-actions">
-
             <button className="hero-primary-btn">
               {slide.button}
-
               <span>→</span>
             </button>
-
-            {/* ==========================
-                AI BUTTON
-            ========================== */}
 
             <button
               className="ai-banner-btn"
               onClick={() => setShowAI(true)}
             >
-              <span className="ai-icon">
-                ✦
-              </span>
-
+              <span className="ai-icon">✦</span>
               Ask AfriMarket AI
             </button>
-
           </div>
 
           {/* TRUST */}
 
           <div className="hero-trust">
-
             <div className="trust-item">
-
-              <span className="trust-icon">
-                ✓
-              </span>
-
+              <span className="trust-icon">✓</span>
               <div>
-                <strong>
-                  Verified Sellers
-                </strong>
-
-                <small>
-                  Trusted businesses
-                </small>
+                <strong>Verified Sellers</strong>
+                <small>Trusted businesses</small>
               </div>
-
             </div>
 
             <div className="trust-divider"></div>
 
             <div className="trust-item">
-
-              <span className="trust-icon">
-                ◆
-              </span>
-
+              <span className="trust-icon">◆</span>
               <div>
-                <strong>
-                  Secure Shopping
-                </strong>
-
-                <small>
-                  Protected transactions
-                </small>
+                <strong>Secure Shopping</strong>
+                <small>Protected transactions</small>
               </div>
-
             </div>
 
             <div className="trust-divider"></div>
 
             <div className="trust-item">
-
-              <span className="trust-icon">
-                ◎
-              </span>
-
+              <span className="trust-icon">◎</span>
               <div>
-                <strong>
-                  Global Reach
-                </strong>
-
-                <small>
-                  Africa to the world
-                </small>
+                <strong>Global Reach</strong>
+                <small>Africa to the world</small>
               </div>
-
             </div>
-
           </div>
-
         </div>
 
-        {/* ==========================================
-            RIGHT SIDE
-        ========================================== */}
+        {/* RIGHT SIDE */}
 
         <div className="hero-visual">
-
           <div className="visual-ring ring-one"></div>
-
           <div className="visual-ring ring-two"></div>
 
           <div className="hero-card">
-
             <div className="card-top">
-
               <div>
-
-                <span className="card-label">
-                  AFRIMARKET
-                </span>
-
+                <span className="card-label">AFRIMARKET</span>
                 <h3>
                   Premium
                   <br />
                   Commerce
                 </h3>
-
               </div>
 
-              <div className="card-symbol">
-                ✦
-              </div>
-
+              <div className="card-symbol">✦</div>
             </div>
 
             <div className="card-center">
-
-              <div className="africa-symbol">
-                AFRICA
-              </div>
-
+              <div className="africa-symbol">AFRICA</div>
             </div>
 
             <div className="card-bottom">
-
               <div>
-
-                <span>
-                  Discover
-                </span>
-
-                <strong>
-                  {slide.category}
-                </strong>
-
+                <span>Discover</span>
+                <strong>{slide.category}</strong>
               </div>
 
-              <div className="card-arrow">
-                →
-              </div>
-
+              <div className="card-arrow">→</div>
             </div>
-
           </div>
 
           {/* FLOATING CARDS */}
 
           <div className="floating-card floating-card-one">
-
-            <span className="floating-icon">
-              ✓
-            </span>
-
+            <span className="floating-icon">✓</span>
             <div>
-
-              <strong>
-                Trusted
-              </strong>
-
-              <small>
-                Marketplace
-              </small>
-
+              <strong>Trusted</strong>
+              <small>Marketplace</small>
             </div>
-
           </div>
 
           <div className="floating-card floating-card-two">
-
-            <span className="floating-icon">
-              ✦
-            </span>
-
+            <span className="floating-icon">✦</span>
             <div>
-
-              <strong>
-                AI Assistant
-              </strong>
-
-              <small>
-                Always available
-              </small>
-
+              <strong>AI Assistant</strong>
+              <small>Always available</small>
             </div>
-
           </div>
 
           <div className="floating-card floating-card-three">
-
-            <span className="floating-icon">
-              ◆
-            </span>
-
+            <span className="floating-icon">◆</span>
             <div>
-
-              <strong>
-                Global
-              </strong>
-
-              <small>
-                Commerce
-              </small>
-
+              <strong>Global</strong>
+              <small>Commerce</small>
             </div>
-
           </div>
-
         </div>
-
       </div>
 
-      {/* ==========================================
-          HERO BOTTOM
-      ========================================== */}
+      {/* HERO BOTTOM */}
 
       <div className="hero-bottom">
-
         <div className="hero-slide-info">
-
-          <span>
-            0{current + 1}
-          </span>
+          <span>0{current + 1}</span>
 
           <div className="slide-progress">
-
             <div
               className="slide-progress-fill"
               key={current}
             ></div>
-
           </div>
 
-          <span>
-            0{slides.length}
-          </span>
-
+          <span>0{slides.length}</span>
         </div>
 
         <div className="hero-dots">
-
           {slides.map((_, index) => (
-
             <button
               key={index}
               className={
@@ -453,55 +306,30 @@ export default function Hero() {
               onClick={() => setCurrent(index)}
               aria-label={`Go to slide ${index + 1}`}
             />
-
           ))}
-
         </div>
 
         <div className="hero-location">
-
-          <span>
-            🌍
-          </span>
-
+          <span>🌍</span>
           AFRICA • WORLDWIDE
-
         </div>
-
       </div>
 
-      {/* =================================================
-          AFRIMARKET AI CHAT WINDOW
-      ================================================= */}
+      {/* AFRIMARKET AI CHAT */}
 
       {showAI && (
-
         <div className="ai-overlay">
-
           <div className="ai-chat">
-
             {/* HEADER */}
 
             <div className="ai-chat-header">
-
               <div className="ai-header-info">
-
-                <div className="ai-avatar">
-                  ✦
-                </div>
+                <div className="ai-avatar">✦</div>
 
                 <div>
-
-                  <strong>
-                    AfriMarket AI
-                  </strong>
-
-                  <span>
-                    ● Online
-                  </span>
-
+                  <strong>AfriMarket AI</strong>
+                  <span>● Online</span>
                 </div>
-
               </div>
 
               <button
@@ -511,15 +339,12 @@ export default function Hero() {
               >
                 ×
               </button>
-
             </div>
 
             {/* MESSAGES */}
 
             <div className="ai-messages">
-
               {messages.map((message, index) => (
-
                 <div
                   key={index}
                   className={
@@ -530,27 +355,20 @@ export default function Hero() {
                 >
                   {message.text}
                 </div>
-
               ))}
 
               {loading && (
-
                 <div className="ai-message assistant-message ai-typing">
-
                   <span></span>
                   <span></span>
                   <span></span>
-
                 </div>
-
               )}
-
             </div>
 
             {/* INPUT */}
 
             <div className="ai-input-area">
-
               <textarea
                 value={input}
                 onChange={(event) =>
@@ -569,19 +387,14 @@ export default function Hero() {
               >
                 ↑
               </button>
-
             </div>
 
             <div className="ai-powered">
               Powered by AfriMarket AI
             </div>
-
           </div>
-
         </div>
-
       )}
-
     </section>
   );
 }
