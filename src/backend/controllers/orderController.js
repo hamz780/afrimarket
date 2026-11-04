@@ -1,4 +1,3 @@
-
 import mongoose from "mongoose";
 import Order from "../models/Order.js";
 import Product from "../models/Product.js";
@@ -26,41 +25,34 @@ const cryptoWallets = {
   },
 };
 
-// Delivery fees are determined by the server.
-// Never trust a delivery price sent by the browser.
-const deliveryOptions = {
-  standard: {
-    name: "Standard Delivery",
-    fee: 0,
-  },
-  express: {
-    name: "Express Delivery",
-    fee: 9.99,
-  },
-  home: {
-    name: "Home Delivery",
-    fee: 4.99,
-  },
-  pickup: {
-    name: "Pickup Station",
-    fee: 0,
-  },
-};
-
+// Only these methods are currently accepted.
+// MTN and Airtel will be enabled after their payment
+// integration and business payment details are configured.
 const acceptedPaymentMethods = [
   "cod",
-  "mtn",
-  "airtel",
-  "mpesa",
-  "visa",
-  "mastercard",
-  "bank",
   "btc",
   "eth",
   "usdt_trc20",
   "usdt_erc20",
-  "usdc",
 ];
+
+// All delivery fees are in UGX.
+const deliveryOptions = {
+  standard: { name: "Standard Delivery", fee: 7000 },
+  express: { name: "Express Delivery", fee: 15000 },
+  home: { name: "Home Delivery", fee: 10000 },
+  pickup: { name: "Pickup Station", fee: 0 },
+};
+
+// Demo coupons. Frontend and backend definitions must match.
+const promoCodes = {
+  AFRI10: { type: "percentage", value: 10 },
+  WELCOME5: { type: "percentage", value: 5 },
+  AFRI5000: { type: "fixed", value: 5000 },
+};
+
+// Existing checkout tax rate retained for now.
+const TAX_RATE = 0.05;
 
 // =====================================================
 // CREATE ORDER
@@ -76,17 +68,16 @@ export const createOrder = async (req, res) => {
       paymentMethod,
       deliveryOption = "standard",
       transactionId = "",
+      promoCode = "",
     } = req.body;
 
-    // Check customer authentication
-    if (!req.user || !req.user._id) {
+    if (!req.user?._id) {
       return res.status(401).json({
         success: false,
         message: "Please log in to place an order.",
       });
     }
 
-    // Validate cart
     if (!Array.isArray(items) || items.length === 0) {
       return res.status(400).json({
         success: false,
@@ -94,7 +85,7 @@ export const createOrder = async (req, res) => {
       });
     }
 
-    // Validate shipping information
+    // Validate shipping information.
     const requiredAddressFields = [
       "fullName",
       "address",
@@ -115,15 +106,15 @@ export const createOrder = async (req, res) => {
       }
     }
 
-    // Validate payment method
+    // Validate payment method.
     if (!acceptedPaymentMethods.includes(paymentMethod)) {
       return res.status(400).json({
         success: false,
-        message: "Please select a valid payment method.",
+        message: "This payment method is not currently available.",
       });
     }
 
-    // Validate delivery option
+    // Validate delivery option.
     const selectedDelivery = deliveryOptions[deliveryOption];
 
     if (!selectedDelivery) {
@@ -133,7 +124,17 @@ export const createOrder = async (req, res) => {
       });
     }
 
-    // Validate cryptocurrency transaction reference
+    // Validate transaction reference.
+    if (
+      typeof transactionId !== "string" ||
+      transactionId.length > 200
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid transaction reference.",
+      });
+    }
+
     const cryptoWallet = cryptoWallets[paymentMethod];
 
     if (cryptoWallet && !transactionId.trim()) {
@@ -143,17 +144,20 @@ export const createOrder = async (req, res) => {
       });
     }
 
+    // Validate promo code.
     if (
-      transactionId &&
-      (typeof transactionId !== "string" || transactionId.length > 200)
+      typeof promoCode !== "string" ||
+      promoCode.trim().length > 40
     ) {
       return res.status(400).json({
         success: false,
-        message: "Invalid transaction reference.",
+        message: "Invalid promo code.",
       });
     }
 
-    // Combine duplicate products and validate quantities
+    const normalizedPromoCode = promoCode.trim().toUpperCase();
+
+    // Combine duplicate products and validate quantities.
     const quantities = new Map();
 
     for (const item of items) {
@@ -195,7 +199,7 @@ export const createOrder = async (req, res) => {
       });
     }
 
-    // Build order items using database prices
+    // Calculate subtotal using trusted database prices.
     const orderItems = [];
     let subtotal = 0;
 
@@ -229,17 +233,42 @@ export const createOrder = async (req, res) => {
       subtotal += price * quantity;
     }
 
-    // Calculate all charges on the backend
-    subtotal = Number(subtotal.toFixed(2));
+    // UGX is calculated in whole shillings.
+    subtotal = Math.round(subtotal);
 
-    const tax = Number((subtotal * 0.05).toFixed(2));
+    // Calculate coupon discount.
+    let discount = 0;
+
+    if (normalizedPromoCode) {
+      const coupon = promoCodes[normalizedPromoCode];
+
+      if (!coupon) {
+        return res.status(400).json({
+          success: false,
+          message: "This promo code is invalid.",
+        });
+      }
+
+      if (coupon.type === "percentage") {
+        discount = subtotal * (coupon.value / 100);
+      } else if (coupon.type === "fixed") {
+        discount = coupon.value;
+      }
+
+      discount = Math.min(discount, subtotal);
+      discount = Math.round(discount);
+    }
+
+    // Calculate tax and delivery.
+    const tax = Math.round(subtotal * TAX_RATE);
     const deliveryFee = selectedDelivery.fee;
 
-    const totalAmount = Number(
-      (subtotal + tax + deliveryFee).toFixed(2)
+    const totalAmount = Math.max(
+      0,
+      subtotal + tax + deliveryFee - discount
     );
 
-    // Reserve product stock
+    // Reserve stock using atomic updates.
     for (const item of orderItems) {
       const result = await Product.updateOne(
         {
@@ -262,25 +291,27 @@ export const createOrder = async (req, res) => {
       updatedProducts.push(item);
     }
 
-    // Create order in MongoDB
+    // Save order.
     const order = await Order.create({
       customer: req.user._id,
-
       items: orderItems,
 
       subtotal,
       tax,
       deliveryFee,
+      promoCode: normalizedPromoCode,
+      discount,
       totalAmount,
 
       deliveryOption,
       deliveryStatus: "Pending",
-
       status: "Pending",
       paymentStatus: "Pending",
       paymentMethod,
 
-      transactionId: cryptoWallet ? transactionId.trim() : "",
+      transactionId: cryptoWallet
+        ? transactionId.trim()
+        : "",
 
       paymentNetwork: cryptoWallet
         ? cryptoWallet.network
@@ -309,7 +340,7 @@ export const createOrder = async (req, res) => {
     });
 
   } catch (error) {
-    // Restore reserved stock if order creation fails
+    // Restore reserved stock if order creation fails.
     for (const item of updatedProducts) {
       try {
         await Product.updateOne(
@@ -420,33 +451,32 @@ export const cancelOrder = async (req, res) => {
       });
     }
 
-    const order = await Order.findOne({
-      _id: orderId,
-      customer: req.user._id,
-    });
+    // Atomically cancel only a pending, unpaid order.
+    const order = await Order.findOneAndUpdate(
+      {
+        _id: orderId,
+        customer: req.user._id,
+        status: "Pending",
+        paymentStatus: { $ne: "Paid" },
+      },
+      {
+        $set: {
+          status: "Cancelled",
+        },
+      },
+      {
+        new: true,
+      }
+    );
 
     if (!order) {
-      return res.status(404).json({
-        success: false,
-        message: "Order not found.",
-      });
-    }
-
-    if (order.status !== "Pending") {
       return res.status(400).json({
         success: false,
-        message: "Only pending orders can be cancelled.",
+        message: "This order cannot be cancelled. It may already be paid or processed.",
       });
     }
 
-    if (order.paymentStatus === "Paid") {
-      return res.status(400).json({
-        success: false,
-        message: "A paid order requires an administrator to process cancellation and refunds.",
-      });
-    }
-
-    // Restore stock
+    // Restore stock after successful cancellation.
     for (const item of order.items) {
       await Product.updateOne(
         { _id: item.product },
@@ -457,9 +487,6 @@ export const cancelOrder = async (req, res) => {
         }
       );
     }
-
-    order.status = "Cancelled";
-    await order.save();
 
     return res.status(200).json({
       success: true,

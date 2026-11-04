@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 import {
@@ -23,7 +22,7 @@ export default function ShippingAddress({ onAddressChange }) {
     country: "Uganda",
     city: "",
     district: "",
-    streetAddress: "",
+    address: "",
     postalCode: "",
     deliveryNotes: "",
   });
@@ -130,9 +129,9 @@ export default function ShippingAddress({ onAddressChange }) {
           <FaHome />
           <input
             type="text"
-            name="streetAddress"
+            name="address"
             placeholder="Street Address"
-            value={address.streetAddress}
+            value={address.address}
             onChange={handleChange}
             required
           />

@@ -1,16 +1,13 @@
-
 import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema(
   {
-    // Customer who placed the order
     customer: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
 
-    // Products purchased
     items: [
       {
         product: {
@@ -18,24 +15,20 @@ const orderSchema = new mongoose.Schema(
           ref: "Product",
           required: true,
         },
-
         name: {
           type: String,
           required: true,
         },
-
         quantity: {
           type: Number,
           required: true,
           min: 1,
         },
-
         price: {
           type: Number,
           required: true,
           min: 0,
         },
-
         image: {
           type: String,
           default: "",
@@ -62,13 +55,26 @@ const orderSchema = new mongoose.Schema(
       min: 0,
     },
 
+    promoCode: {
+      type: String,
+      default: "",
+      trim: true,
+      uppercase: true,
+    },
+
+    discount: {
+      type: Number,
+      default: 0,
+      min: 0,
+    },
+
     totalAmount: {
       type: Number,
       required: true,
       min: 0,
     },
 
-    // Delivery information
+    // Delivery
     deliveryOption: {
       type: String,
       enum: ["standard", "express", "home", "pickup"],
@@ -94,7 +100,7 @@ const orderSchema = new mongoose.Schema(
       default: "Pending",
     },
 
-    // Payment information
+    // Payment
     paymentStatus: {
       type: String,
       enum: ["Pending", "Paid", "Failed", "Refunded"],
@@ -142,37 +148,30 @@ const orderSchema = new mongoose.Schema(
         type: String,
         required: true,
       },
-
       address: {
         type: String,
         required: true,
       },
-
       city: {
         type: String,
         required: true,
       },
-
       district: {
         type: String,
         default: "",
       },
-
       country: {
         type: String,
         required: true,
       },
-
       phone: {
         type: String,
         required: true,
       },
-
       postalCode: {
         type: String,
         default: "",
       },
-
       deliveryNotes: {
         type: String,
         default: "",

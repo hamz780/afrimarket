@@ -1,4 +1,3 @@
-
 import {
   FaTruck,
   FaBolt,
@@ -8,53 +7,54 @@ import {
 
 import "./DeliveryOptions.css";
 
+const formatUGX = (amount) =>
+  `UGX ${Number(amount).toLocaleString("en-UG")}`;
+
+const deliveryOptions = [
+  {
+    id: "standard",
+    name: "Standard Delivery",
+    description: "2 - 5 Business Days",
+    price: 700,
+    priceLabel: formatUGX(700),
+    icon: <FaTruck />,
+    iconClass: "",
+  },
+  {
+    id: "express",
+    name: "Express Delivery",
+    description: "Same Day / Next Day",
+    price: 15000,
+    priceLabel: formatUGX(15000),
+    icon: <FaBolt />,
+    iconClass: "express",
+  },
+  {
+    id: "home",
+    name: "Home Delivery",
+    description: "Delivered to your doorstep",
+    price: 10000,
+    priceLabel: formatUGX(10000),
+    icon: <FaHome />,
+    iconClass: "home",
+  },
+  {
+    id: "pickup",
+    name: "Pickup Station",
+    description: "Collect from nearest AfriMarket Hub",
+    price: 0,
+    priceLabel: "Free",
+    icon: <FaStore />,
+    iconClass: "pickup",
+  },
+];
+
 export default function DeliveryOptions({
   value = "standard",
   onDeliveryChange,
 }) {
-  const deliveryOptions = [
-    {
-      id: "standard",
-      name: "Standard Delivery",
-      description: "2 - 5 Business Days",
-      price: 0,
-      priceLabel: "Free",
-      icon: <FaTruck />,
-      iconClass: "",
-    },
-    {
-      id: "express",
-      name: "Express Delivery",
-      description: "Same Day / Next Day",
-      price: 9.99,
-      priceLabel: "$9.99",
-      icon: <FaBolt />,
-      iconClass: "express",
-    },
-    {
-      id: "home",
-      name: "Home Delivery",
-      description: "Delivered to your doorstep",
-      price: 4.99,
-      priceLabel: "$4.99",
-      icon: <FaHome />,
-      iconClass: "home",
-    },
-    {
-      id: "pickup",
-      name: "Pickup Station",
-      description: "Collect from nearest AfriMarket Hub",
-      price: 0,
-      priceLabel: "Free",
-      icon: <FaStore />,
-      iconClass: "pickup",
-    },
-  ];
-
   const handleChange = (option) => {
-    if (onDeliveryChange) {
-      onDeliveryChange(option);
-    }
+    onDeliveryChange?.(option);
   };
 
   return (
@@ -66,7 +66,9 @@ export default function DeliveryOptions({
 
       {deliveryOptions.map((option) => (
         <label
-          className="delivery-card"
+          className={`delivery-card ${
+            value === option.id ? "selected" : ""
+          }`}
           key={option.id}
         >
           <input
